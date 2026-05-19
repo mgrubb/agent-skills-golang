@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
   author: samber
-  version: "1.2.1"
+  version: "1.2.2"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills-golang
@@ -53,9 +53,11 @@ Legacy `b.N` loops still compile and are fine to keep when preserving existing b
 ```go
 func BenchmarkAlloc(b *testing.B) {
     b.ReportAllocs() // or run with -benchmem flag
+    var sink []byte
     for b.Loop() {
-        _ = make([]byte, 1024)
+        sink = make([]byte, 1024)
     }
+    _ = sink
 }
 ```
 
