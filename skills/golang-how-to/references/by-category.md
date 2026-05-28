@@ -90,7 +90,7 @@ Use when: propagating deadlines and cancellation signals, or passing request-sco
 
 ### `samber/cc-skills-golang@golang-data-structures` ⭐️
 
-Golang data structures internals and usage — slices (capacity growth, append aliasing), maps, channels, sync primitives, container/*, generic collections, and when to use each.
+Golang data structures internals and usage — slices (capacity growth, append aliasing), maps, channels, sync primitives, container/\*, generic collections, and when to use each.
 
 Use when: choosing a data structure, understanding slice/map performance characteristics, or using container/list, container/heap, or ring.
 
@@ -373,4 +373,3 @@ Use when: the codebase imports `github.com/stretchr/testify`. For test architect
 ### `samber/cc-skills-golang@golang-testing` ⭐️ 🧠 ⚙️
 
 See "QA & Performance" section above.
-

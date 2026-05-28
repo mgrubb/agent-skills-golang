@@ -67,9 +67,7 @@ Additional skills to suggest based on codebase context:
 ```markdown
 ## Required Go skills
 
-The following Go skills from `samber/cc-skills-golang` MUST always be applied
-when working on this project. Load them at the start of every Go-related task,
-regardless of whether the user explicitly mentions them.
+The following Go skills from `samber/cc-skills-golang` MUST always be applied when working on this project. Load them at the start of every Go-related task, regardless of whether the user explicitly mentions them.
 
 - `samber/cc-skills-golang@golang-error-handling`
 - `samber/cc-skills-golang@golang-security`
