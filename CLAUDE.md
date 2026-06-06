@@ -193,7 +193,7 @@ Place these directives at the very top of the body, before the first heading, in
 
 All four are optional. A short procedural skill may have none. A complex orchestrating skill may have all four.
 
-The **Dependencies** block lists only non-trivial developer tools — skip universal system utilities (e.g. `curl`, `git`). Use `go install` for Go tools and `brew install` for system tools. Place this block last among the top-of-body directives, just before the first `#` heading.
+The **Dependencies** block lists only non-trivial developer tools — skip universal system utilities (e.g. `curl`, `git`). Prefer `go install` over `brew install` when the tool provides a Go install path; use `brew install` only for tools without one (e.g. `protoc`). Place this block last among the top-of-body directives, just before the first `#` heading.
 
 #### Persona (optional)
 
