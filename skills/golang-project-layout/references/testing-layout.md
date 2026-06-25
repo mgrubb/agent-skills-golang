@@ -28,10 +28,9 @@ internal/
     ├── user.go
     └── user_test.go
 
-pkg/
-└── logger/
-    ├── logger.go
-    └── logger_test.go
+logger/
+├── logger.go
+└── logger_test.go
 ```
 
 **Key principles:**
@@ -86,11 +85,10 @@ Examples serve two purposes: documentation and verification.
 **In libraries** - use `*_example_test.go` files:
 
 ```
-pkg/
-└── logger/
-    ├── logger.go
-    ├── logger_test.go
-    └── logger_example_test.go     # Examples
+logger/
+├── logger.go
+├── logger_test.go
+└── logger_example_test.go     # Examples
 ```
 
 **Example function format:**
@@ -195,12 +193,18 @@ internal/
 
 ## Running Tests
 
+Use the project build wrapper for normal test runs so formatting, linting, race detection, and coverage artifacts follow the repository convention:
+
 ```bash
-go test ./...                    # Run all tests
+./build.sh check                 # Format, lint, and run tests
+./build.sh test                  # Run tests and write artifacts to dist/test/
+```
+
+Use direct `go test` commands only for targeted local debugging:
+
+```bash
 go test ./internal/handler       # Test specific package
-go test -v ./...                 # Verbose output
-go test -race ./...              # Race detection
-go test -cover ./...             # Coverage report
+go test -run TestHandler ./...   # Run matching tests
 go test -short ./...             # Skip long-running tests
 ```
 

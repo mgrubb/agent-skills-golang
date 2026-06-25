@@ -22,7 +22,7 @@
     "assertions": [
       {"id": "2.1", "text": "Says business logic does NOT belong in cmd/server/main.go"},
       {"id": "2.2", "text": "Says cmd/ should contain minimal logic: parse flags, wire dependencies, call Run()"},
-      {"id": "2.3", "text": "Recommends moving business logic to internal/ or pkg/"},
+      {"id": "2.3", "text": "Recommends moving project-specific business logic to internal/"},
       {"id": "2.4", "text": "main.go should primarily do dependency wiring and startup"},
       {"id": "2.5", "text": "NEVER put request parsing, database queries, or response formatting in cmd/"}
     ]
@@ -58,15 +58,15 @@
   },
   {
     "id": 5,
-    "name": "internal-vs-pkg-decision",
-    "description": "Tests whether the model correctly decides between internal/ and pkg/ based on export requirements",
+    "name": "internal-vs-root-package-decision",
+    "description": "Tests whether the model correctly decides between internal/ and root-level reusable package directories based on export requirements",
     "prompt": "I'm building a Go project with both a web service and a shared logging library that other teams want to import. I also have some private request parsing code. Where should I put each?",
-    "trap": "Without the skill, the model may put everything in internal/ or everything in pkg/. The skill says internal/ for non-exported, pkg/ only when code is useful to external consumers.",
+    "trap": "Without the skill, the model may put everything in internal/ or create a pkg/ directory. The skill says internal/ for project-specific code, and root-level package directories like logger/ only when code is useful to external consumers.",
     "assertions": [
-      {"id": "5.1", "text": "Puts the shared logging library in pkg/ (useful to external consumers)"},
+      {"id": "5.1", "text": "Puts the shared logging library in a root-level logger/ package (useful to external consumers)"},
       {"id": "5.2", "text": "Puts the private request parsing code in internal/ (not exported)"},
       {"id": "5.3", "text": "Explains that internal/ cannot be imported by external packages (Go enforces this)"},
-      {"id": "5.4", "text": "Mentions that pkg/ should only be used when code is genuinely intended for external use"},
+      {"id": "5.4", "text": "Mentions that public packages should be root-level directories like logger/, not nested under pkg/"},
       {"id": "5.5", "text": "Service/business logic goes in internal/ by default"}
     ]
   },
@@ -148,8 +148,8 @@
     "assertions": [
       {"id": "11.1", "text": "Creates separate subdirectories: cmd/server/, cmd/cli/, cmd/migrate/ (or similar names)"},
       {"id": "11.2", "text": "Each subdirectory has its own main.go with package main"},
-      {"id": "11.3", "text": "Each binary can be built independently (go build ./cmd/server, etc.)"},
-      {"id": "11.4", "text": "Mentions go build ./cmd/... to build all binaries at once"},
+      {"id": "11.3", "text": "Each binary has its own cmd/{name}/main.go entry point"},
+      {"id": "11.4", "text": "Mentions ./build.sh build to build all binaries into dist/bin/"},
       {"id": "11.5", "text": "Business logic is in internal/, not duplicated across cmd/ directories"}
     ]
   }

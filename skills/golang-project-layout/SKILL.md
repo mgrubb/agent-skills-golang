@@ -1,13 +1,13 @@
 ---
 name: golang-project-layout
-description: "Provides a guide for setting up Golang project layouts and workspaces. Use when starting a new Go project, organizing an existing codebase, setting up a monorepo with multiple packages, creating CLI tools with multiple main packages, deciding between cmd/internal/pkg directory conventions, or discussing package restructuring, package splits, or module splits."
+description: "Provides a guide for setting up Golang project layouts and workspaces. Use when starting a new Go project, organizing an existing codebase, setting up a monorepo with multiple packages, creating CLI tools with multiple main packages, deciding between cmd/internal/root package directory conventions, or discussing package restructuring, package splits, or module splits."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
   author: mgrubb
   originalAuthor: samber
-  version: "1.2.0"
+  version: "1.3.0"
   openclaw:
     emoji: "📁"
     homepage: https://github.com/mgrubb/agent-skills-golang
@@ -40,8 +40,8 @@ For applications (services, APIs, workers), follow [12-Factor App](https://12fac
 
 | Project Type | Use When | Key Directories |
 | --- | --- | --- |
-| **CLI Tool** | Building a command-line application | `cmd/{name}/`, `internal/`, optional `pkg/` |
-| **Library** | Creating reusable code for others | `pkg/{name}/`, `internal/` for private code |
+| **CLI Tool** | Building a command-line application | `cmd/{name}/`, `internal/`, optional root-level reusable packages |
+| **Library** | Creating reusable code for others | Root-level package directories like `logger/`, `internal/` for private code |
 | **Service** | HTTP API, microservice, or web app | `cmd/{service}/`, `internal/`, `api/`, `web/` |
 | **Monorepo** | Multiple related packages/modules | `go.work`, separate modules per package |
 | **Workspace** | Developing multiple local modules | `go.work`, replace directives |
@@ -76,7 +76,7 @@ Packages MUST be lowercase, singular, and match their directory name. → See `m
 
 ## Directory Layout
 
-All `main` packages must reside in `cmd/` with minimal logic — parse flags, wire dependencies, call `Run()`. Business logic belongs in `internal/` or `pkg/`. Use `internal/` for non-exported packages, `pkg/` only when code is useful to external consumers.
+All `main` packages must reside in `cmd/` with minimal logic — parse flags, wire dependencies, call `Run()`. Project-specific business logic and implementation details belong in `internal/`. Packages intended to be imported by other projects should live in descriptive root-level directories, such as `logger/`, `auth/`, or `retry/`; do not add a `pkg/` wrapper directory.
 
 See [directory layout examples](references/directory-layouts.md) for universal, small project, and library layouts, plus common mistakes.
 
@@ -84,7 +84,8 @@ See [directory layout examples](references/directory-layouts.md) for universal, 
 
 Every Go project should include at the root:
 
-- **Makefile** — build automation. See [Makefile template](assets/Makefile)
+- **build.sh** — root wrapper for goyek build automation. See [build.sh template](assets/build.sh)
+- **build/** — separate Go module for goyek tasks. See [goyek build task template](assets/build/build.go) and [goyek check task template](assets/build/check.go)
 - **.gitignore** — git ignore patterns. See [.gitignore template](assets/.gitignore)
 - **.golangci.yml** — linter config. See the `mgrubb/agent-skills-golang@golang-lint` skill for the recommended configuration
 
@@ -111,7 +112,8 @@ When starting a new Go project:
 - [ ] Run `go mod init github.com/user/project-name`
 - [ ] Create `cmd/{name}/main.go` for entry point
 - [ ] Create `internal/` for private code
-- [ ] Create `pkg/` only if you have public libraries
+- [ ] Create root-level package directories like `logger/` only for code intended for external consumers
+- [ ] Add `build.sh` and a separate `build/` goyek module for build automation
 - [ ] For monorepos: Initialize `go work` and add modules
 - [ ] Run `gofmt -s -w .` to ensure formatting
 - [ ] Add `.gitignore` with `/vendor/` and binary patterns

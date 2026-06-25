@@ -24,23 +24,22 @@ Example monorepo with multiple modules:
 ```
 my-monorepo/
 ├── go.work                    # Workspace file (see below)
-├── pkg/
-│   ├── auth/                 # Module 1: github.com/user/my-monorepo/pkg/auth
-│   │   ├── go.mod
-│   │   ├── cmd/
-│   │   │   └── auth-server/
-│   │   │       └── main.go
-│   │   └── internal/
-│   │       └── handler/
-│   │           └── auth.go
-│   └── user/                 # Module 2: github.com/user/my-monorepo/pkg/user
-│       ├── go.mod
-│       ├── cmd/
-│       │   └── user-server/
-│       │       └── main.go
-│       └── internal/
-│           └── handler/
-│               └── user.go
+├── auth/                     # Module 1: github.com/user/my-monorepo/auth
+│   ├── go.mod
+│   ├── cmd/
+│   │   └── auth-server/
+│   │       └── main.go
+│   └── internal/
+│       └── handler/
+│           └── auth.go
+├── user/                     # Module 2: github.com/user/my-monorepo/user
+│   ├── go.mod
+│   ├── cmd/
+│   │   └── user-server/
+│   │       └── main.go
+│   └── internal/
+│       └── handler/
+│           └── user.go
 ├── cmd/
 │   └── api/                 # Module 3: github.com/user/my-monorepo/cmd/api
 │       ├── go.mod
