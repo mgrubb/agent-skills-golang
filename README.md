@@ -6,6 +6,17 @@ This fork is independently maintained by [Michael Grubb](https://github.com/mgru
 
 For generic skills, please visit [cc-skills](https://github.com/samber/cc-skills).
 
+## 🍴 Why fork ?
+
+The upstream project is outstanding, this repo is not attempting to replace it or even improve it, it's just that I have different opinions about certain things and I wanted to keep those easily available.  Not all of the skills in the upstream are marked as supercedable, so I've decided to
+just fork the entire repo and make my own changes.  At some point I may submit a PR to upstream to make all skills supercedable, and change this repo to just the differences.
+
+### Key Differences
+
+- `golang-project-layout` prefer [goyek](https://github.com/goyek/goyek)-based build instead of Makefile.
+- `golang-project-layout` does not enforce using the `pkg/` directory for exportable modules.
+- more to come
+
 > [!IMPORTANT]
 > The upstream project was bootstrapped with Claude Code by distilling Go project commits. **Edited, tested, reviewed and reworked by a human**.
 >
