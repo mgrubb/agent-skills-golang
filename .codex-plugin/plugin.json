@@ -1,18 +1,12 @@
 {
     "name": "agent-skills-golang",
     "description": "AI Agent Skills for production-ready Go projects",
-    "version": "1.5.1",
+    "version": "1.6.0",
     "author": {
         "name": "Michael Grubb",
         "email": "mg@grubb.co",
         "url": "https://github.com/mgrubb"
     },
-    "originalAuthor": {
-        "name": "Samuel Berthe",
-        "email": "hey@samuel-berthe.fr",
-        "url": "https://github.com/samber"
-    },
-    "upstream": "https://github.com/samber/cc-skills-golang",
     "homepage": "https://github.com/mgrubb/agent-skills-golang",
     "repository": "https://github.com/mgrubb/agent-skills-golang",
     "license": "MIT",
@@ -22,14 +16,13 @@
         "shortDescription": "Go skills for production-ready coding agents.",
         "longDescription": "A collection of Go-focused agent skills covering project layout, testing, security, concurrency, performance, observability, popular libraries, and production engineering conventions.",
         "developerName": "Michael Grubb",
-        "originalDeveloperName": "Samuel Berthe",
         "category": "Developer Tools",
         "capabilities": ["Skills"],
         "websiteURL": "https://github.com/mgrubb/agent-skills-golang"
     },
     "keywords": [
-        "claude-code",
-        "claude-code-plugin",
+        "codex",
+        "codex-plugin",
         "plugin",
         "go",
         "golang",

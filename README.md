@@ -35,12 +35,22 @@ npx skills add https://github.com/mgrubb/agent-skills-golang --skill golang-perf
 ```
 
 <!-- prettier-ignore-start -->
+<details>
+<summary>Codex</summary>
+
+```bash
+codex plugin marketplace add mgrubb/agents
+codex plugin add agent-skills-golang@mgrubb
+```
+
+</details>
 
 <details>
 <summary>Claude Code</summary>
 
 ```bash
-/plugin install https://github.com/mgrubb/agent-skills-golang
+/plugin marketplace add mgrubb/agents
+/plugin install agent-skills-golang@mgrubb
 ```
 
 </details>
