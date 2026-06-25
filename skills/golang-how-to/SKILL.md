@@ -1,15 +1,16 @@
 ---
 name: golang-how-to
-description: "Golang skills orchestrator — always active on any Golang coding, review, debug, or setup task. Reads the task context and loads the most relevant skills from samber/cc-skills-golang, often multiple at once: writing a gRPC service loads golang-grpc + golang-testing + golang-error-handling; debugging a panic loads golang-troubleshooting + golang-safety; auditing security loads golang-security + golang-lint + golang-safety. Also: disambiguates competing clusters when two skills seem to overlap (performance vs benchmark vs troubleshooting, samber/lo vs mo vs ro, DI cluster, safety vs security), and configures CLAUDE.md or AGENTS.md to force-trigger skills in a project (/golang-how-to configure)."
+description: "Golang skills orchestrator — always active on any Golang coding, review, debug, or setup task. Reads the task context and loads the most relevant skills from mgrubb/agent-skills-golang, often multiple at once: writing a gRPC service loads golang-grpc + golang-testing + golang-error-handling; debugging a panic loads golang-troubleshooting + golang-safety; auditing security loads golang-security + golang-lint + golang-safety. Also: disambiguates competing clusters when two skills seem to overlap (performance vs benchmark vs troubleshooting, samber/lo vs mo vs ro, DI cluster, safety vs security), and configures CLAUDE.md or AGENTS.md to force-trigger skills in a project (/golang-how-to configure)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents. Requires git.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.1"
   openclaw:
     emoji: "🧭"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -61,7 +62,7 @@ For each task, load the **primary skill** and all applicable **secondary skills*
 | Use log/slog | `golang-samber-slog` | `golang-observability`, `golang-error-handling` |
 | Use dependency injection | `golang-dependency-injection` | `golang-google-wire` or `golang-uber-dig` or `golang-uber-fx` or `golang-samber-do` |
 
-All skill identifiers above are short forms of `samber/cc-skills-golang@<name>`.
+All skill identifiers above are short forms of `mgrubb/agent-skills-golang@<name>`.
 
 ## Categories at a glance
 
@@ -107,4 +108,4 @@ When invoked as `/golang-how-to configure`, follow [project-config.md](reference
 
 This skill is not exhaustive. Refer to individual skill files and the official Go documentation for detailed guidance.
 
-If you encounter a bug or unexpected behavior in this skill plugin, open an issue at <https://github.com/samber/cc-skills-golang/issues>.
+If you encounter a bug or unexpected behavior in this skill plugin, open an issue at <https://github.com/mgrubb/agent-skills-golang/issues>.

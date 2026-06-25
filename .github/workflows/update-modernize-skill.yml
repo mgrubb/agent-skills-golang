@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   update-modernize:
-    if: github.repository_owner == 'samber'
+    if: github.repository_owner == 'mgrubb'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

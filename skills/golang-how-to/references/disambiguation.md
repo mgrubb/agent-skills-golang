@@ -10,10 +10,10 @@ Four skills form a "deep analysis" cluster. `golang-observability` is the always
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-performance` | Optimization patterns — "if allocation bottleneck → use sync.Pool", "if hot-path → avoid reflection" | Measurement, profile capture, root cause analysis |
-| `samber/cc-skills-golang@golang-benchmark` | pprof/trace capture, flame graph interpretation, benchstat comparison, CI regression detection | Deciding which optimization to apply |
-| `samber/cc-skills-golang@golang-troubleshooting` | Debugging workflow: reproduce, bisect, Delve, race detector, GODEBUG, test-driven debugging | Profile interpretation, optimization patterns |
-| `samber/cc-skills-golang@golang-observability` | Always-on production signals: structured logs, Prometheus counters, OTel traces, alerting | Temporary investigation, benchmark runs |
+| `mgrubb/agent-skills-golang@golang-performance` | Optimization patterns — "if allocation bottleneck → use sync.Pool", "if hot-path → avoid reflection" | Measurement, profile capture, root cause analysis |
+| `mgrubb/agent-skills-golang@golang-benchmark` | pprof/trace capture, flame graph interpretation, benchstat comparison, CI regression detection | Deciding which optimization to apply |
+| `mgrubb/agent-skills-golang@golang-troubleshooting` | Debugging workflow: reproduce, bisect, Delve, race detector, GODEBUG, test-driven debugging | Profile interpretation, optimization patterns |
+| `mgrubb/agent-skills-golang@golang-observability` | Always-on production signals: structured logs, Prometheus counters, OTel traces, alerting | Temporary investigation, benchmark runs |
 
 **Routing examples:**
 
@@ -30,11 +30,11 @@ Start with `golang-dependency-injection` for library selection. Then use the lib
 
 | Skill | Unique territory |
 | --- | --- |
-| `samber/cc-skills-golang@golang-dependency-injection` | Concepts (why DI, manual injection), constructor patterns, library comparison table |
-| `samber/cc-skills-golang@golang-google-wire` | Compile-time codegen: `wire.Build`, `wire.NewSet`, `wire.Bind`, `ProviderSet` |
-| `samber/cc-skills-golang@golang-uber-dig` | Runtime reflection: `dig.Provide`, `dig.In`/`dig.Out`, value groups, `Decorate` |
-| `samber/cc-skills-golang@golang-uber-fx` | Full application framework on top of dig: `fx.New`, `fx.Module`, lifecycle hooks, `fx.Annotate` |
-| `samber/cc-skills-golang@golang-samber-do` | Type-safe container, `do.Provide`, scopes, health checks, graceful shutdown |
+| `mgrubb/agent-skills-golang@golang-dependency-injection` | Concepts (why DI, manual injection), constructor patterns, library comparison table |
+| `mgrubb/agent-skills-golang@golang-google-wire` | Compile-time codegen: `wire.Build`, `wire.NewSet`, `wire.Bind`, `ProviderSet` |
+| `mgrubb/agent-skills-golang@golang-uber-dig` | Runtime reflection: `dig.Provide`, `dig.In`/`dig.Out`, value groups, `Decorate` |
+| `mgrubb/agent-skills-golang@golang-uber-fx` | Full application framework on top of dig: `fx.New`, `fx.Module`, lifecycle hooks, `fx.Annotate` |
+| `mgrubb/agent-skills-golang@golang-samber-do` | Type-safe container, `do.Provide`, scopes, health checks, graceful shutdown |
 
 **Routing examples:**
 
@@ -51,9 +51,9 @@ The three core skills cover three distinct programming models. They rarely compe
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-samber-lo` | Finite collections: `lo.Map`, `lo.Filter`, `lo.Reduce`, `lo.Uniq`, `lo.GroupBy` — 500+ helpers | Infinite streams, event-driven pipelines |
-| `samber/cc-skills-golang@golang-samber-ro` | Infinite/event-driven: observables, subjects, operators like `Map`/`Filter`/`Throttle`, backpressure | Finite slice transforms |
-| `samber/cc-skills-golang@golang-samber-mo` | Monadic types: `mo.Option[T]`, `mo.Result[T]`, `mo.Either[L,R]`, `mo.Future[T]` | Slice helpers, reactive streams |
+| `mgrubb/agent-skills-golang@golang-samber-lo` | Finite collections: `lo.Map`, `lo.Filter`, `lo.Reduce`, `lo.Uniq`, `lo.GroupBy` — 500+ helpers | Infinite streams, event-driven pipelines |
+| `mgrubb/agent-skills-golang@golang-samber-ro` | Infinite/event-driven: observables, subjects, operators like `Map`/`Filter`/`Throttle`, backpressure | Finite slice transforms |
+| `mgrubb/agent-skills-golang@golang-samber-mo` | Monadic types: `mo.Option[T]`, `mo.Result[T]`, `mo.Either[L,R]`, `mo.Future[T]` | Slice helpers, reactive streams |
 
 **Routing examples:**
 
@@ -70,9 +70,9 @@ The three core skills cover three distinct programming models. They rarely compe
 
 | Skill | Unique territory |
 | --- | --- |
-| `samber/cc-skills-golang@golang-error-handling` | Idiomatic error flow: `fmt.Errorf("%w")`, `errors.Is`/`errors.As`, sentinel errors, single-handling rule, `panic`/`recover` |
-| `samber/cc-skills-golang@golang-samber-oops` | `oops.New().Code().User().Hint()` builder, stack traces, APM integration, `oops.Recover` |
-| `samber/cc-skills-golang@golang-safety` | Preventing errors from occurring: nil checks, zero-value design, integer overflow guards, append aliasing |
+| `mgrubb/agent-skills-golang@golang-error-handling` | Idiomatic error flow: `fmt.Errorf("%w")`, `errors.Is`/`errors.As`, sentinel errors, single-handling rule, `panic`/`recover` |
+| `mgrubb/agent-skills-golang@golang-samber-oops` | `oops.New().Code().User().Hint()` builder, stack traces, APM integration, `oops.Recover` |
+| `mgrubb/agent-skills-golang@golang-safety` | Preventing errors from occurring: nil checks, zero-value design, integer overflow guards, append aliasing |
 
 **Routing examples:**
 
@@ -88,10 +88,10 @@ These four skills each own a distinct slice of "code quality". Source descriptio
 
 | Skill | Unique territory |
 | --- | --- |
-| `samber/cc-skills-golang@golang-code-style` | Line formatting, blank lines between declarations, short variable names in small scopes, comment placement |
-| `samber/cc-skills-golang@golang-naming` | All identifier naming rules: `MixedCaps`, no `GetX`, no `IFoo` prefixes, package names, error variable names |
-| `samber/cc-skills-golang@golang-lint` | golangci-lint YAML config, which linters to enable, `//nolint` usage, CI integration |
-| `samber/cc-skills-golang@golang-documentation` | Exported symbol comments, package-level docs, README sections, `example_test.go`, `llms.txt` |
+| `mgrubb/agent-skills-golang@golang-code-style` | Line formatting, blank lines between declarations, short variable names in small scopes, comment placement |
+| `mgrubb/agent-skills-golang@golang-naming` | All identifier naming rules: `MixedCaps`, no `GetX`, no `IFoo` prefixes, package names, error variable names |
+| `mgrubb/agent-skills-golang@golang-lint` | golangci-lint YAML config, which linters to enable, `//nolint` usage, CI integration |
+| `mgrubb/agent-skills-golang@golang-documentation` | Exported symbol comments, package-level docs, README sections, `example_test.go`, `llms.txt` |
 
 **Routing examples:**
 
@@ -106,9 +106,9 @@ These four skills each own a distinct slice of "code quality". Source descriptio
 
 | Skill | Unique territory |
 | --- | --- |
-| `samber/cc-skills-golang@golang-cli` | Exit codes, signal handling (SIGTERM), stdin/stdout/stderr patterns, progress bars, terminal detection |
-| `samber/cc-skills-golang@golang-spf13-cobra` | `cobra.Command`, `PersistentPreRunE`, `Args` validators, `ValidArgsFunction`, `SetArgs` in tests |
-| `samber/cc-skills-golang@golang-spf13-viper` | `viper.BindPFlag`, `AutomaticEnv`, `ReadInConfig`, `OnConfigChange`, test isolation with `viper.Reset()` |
+| `mgrubb/agent-skills-golang@golang-cli` | Exit codes, signal handling (SIGTERM), stdin/stdout/stderr patterns, progress bars, terminal detection |
+| `mgrubb/agent-skills-golang@golang-spf13-cobra` | `cobra.Command`, `PersistentPreRunE`, `Args` validators, `ValidArgsFunction`, `SetArgs` in tests |
+| `mgrubb/agent-skills-golang@golang-spf13-viper` | `viper.BindPFlag`, `AutomaticEnv`, `ReadInConfig`, `OnConfigChange`, test isolation with `viper.Reset()` |
 
 **Routing examples:**
 
@@ -123,8 +123,8 @@ These four skills each own a distinct slice of "code quality". Source descriptio
 
 | Skill | Unique territory |
 | --- | --- |
-| `samber/cc-skills-golang@golang-testing` | Test strategy, table-driven patterns, `t.Parallel()`, `testcontainers`, goleak, coverage, fuzz |
-| `samber/cc-skills-golang@golang-stretchr-testify` | `assert.Equal`, `require.NoError`, `mock.On`, `mock.AssertExpectations`, `testify/suite` lifecycle |
+| `mgrubb/agent-skills-golang@golang-testing` | Test strategy, table-driven patterns, `t.Parallel()`, `testcontainers`, goleak, coverage, fuzz |
+| `mgrubb/agent-skills-golang@golang-stretchr-testify` | `assert.Equal`, `require.NoError`, `mock.On`, `mock.AssertExpectations`, `testify/suite` lifecycle |
 
 **Routing examples:**
 
@@ -140,8 +140,8 @@ These two skills overlap on "how to design Go types". The split is: type-level d
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-structs-interfaces` | Composition over inheritance, embedding, type assertions, struct tag conventions, pointer vs value receivers, interface segregation | How types combine into architectural patterns |
-| `samber/cc-skills-golang@golang-design-patterns` | Functional options, middleware chains, circuit breaker, graceful shutdown, retry patterns | Low-level type mechanics |
+| `mgrubb/agent-skills-golang@golang-structs-interfaces` | Composition over inheritance, embedding, type assertions, struct tag conventions, pointer vs value receivers, interface segregation | How types combine into architectural patterns |
+| `mgrubb/agent-skills-golang@golang-design-patterns` | Functional options, middleware chains, circuit breaker, graceful shutdown, retry patterns | Low-level type mechanics |
 
 **Overlap zone:** "DI via interfaces" — defining small interfaces is `golang-structs-interfaces`; wiring multiple components together via those interfaces is `golang-design-patterns`.
 
@@ -162,8 +162,8 @@ These skills overlap when goroutines are cancelled via context.
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-concurrency` | Goroutine lifecycle, channel patterns, `sync.WaitGroup`, `errgroup`, worker pools, fan-out/fan-in, detecting races | Context propagation rules |
-| `samber/cc-skills-golang@golang-context` | `context.WithCancel`, `context.WithTimeout`, `context.WithValue`, propagation through call chains, `WithoutCancel` | Goroutine coordination patterns |
+| `mgrubb/agent-skills-golang@golang-concurrency` | Goroutine lifecycle, channel patterns, `sync.WaitGroup`, `errgroup`, worker pools, fan-out/fan-in, detecting races | Context propagation rules |
+| `mgrubb/agent-skills-golang@golang-context` | `context.WithCancel`, `context.WithTimeout`, `context.WithValue`, propagation through call chains, `WithoutCancel` | Goroutine coordination patterns |
 
 **Overlap zone:** "cancelling goroutines via context" — load both skills. `golang-context` owns the context API; `golang-concurrency` owns the goroutine coordination.
 
@@ -183,8 +183,8 @@ Both skills prevent bugs, but with different threat models.
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-safety` | Nil panics, integer overflow, slice aliasing via append, concurrent map write, float equality, zero-value design | External attackers, cryptography, secrets |
-| `samber/cc-skills-golang@golang-security` | SQL/command/LDAP injection, weak crypto (`math/rand`), hardcoded secrets, TLS misconfiguration, SSRF, path traversal | Internal runtime correctness |
+| `mgrubb/agent-skills-golang@golang-safety` | Nil panics, integer overflow, slice aliasing via append, concurrent map write, float equality, zero-value design | External attackers, cryptography, secrets |
+| `mgrubb/agent-skills-golang@golang-security` | SQL/command/LDAP injection, weak crypto (`math/rand`), hardcoded secrets, TLS misconfiguration, SSRF, path traversal | Internal runtime correctness |
 
 **Routing examples:**
 
@@ -203,8 +203,8 @@ Both skills suggest code changes, but for different reasons.
 
 | Skill | Unique territory | Does NOT own |
 | --- | --- | --- |
-| `samber/cc-skills-golang@golang-modernize` | Adopting language features: range-over-int, `min`/`max` builtins, `iter.Seq`, `slices.SortFunc`, `log/slog`, `testing.T.Context` | Static analysis configuration |
-| `samber/cc-skills-golang@golang-lint` | golangci-lint YAML config, enabling/disabling linters, interpreting linter output, `//nolint` policy | Language feature adoption |
+| `mgrubb/agent-skills-golang@golang-modernize` | Adopting language features: range-over-int, `min`/`max` builtins, `iter.Seq`, `slices.SortFunc`, `log/slog`, `testing.T.Context` | Static analysis configuration |
+| `mgrubb/agent-skills-golang@golang-lint` | golangci-lint YAML config, enabling/disabling linters, interpreting linter output, `//nolint` policy | Language feature adoption |
 
 **Overlap zone:** Some linters (`govet`, `deadcode`, `perfsprint`) produce warnings that overlap with modernize suggestions (e.g., "use `slog` instead of `log`"). The boundary: lint owns the tool configuration and suppression policy; modernize owns the rewrite patterns to apply once you've decided to adopt the feature.
 

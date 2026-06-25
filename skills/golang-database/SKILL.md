@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.1"
   openclaw:
     emoji: "🗄"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -24,7 +25,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 - **Write mode** — generating new repository functions, query helpers, or transaction wrappers: follow the skill's sequential instructions; launch a background agent to grep for existing query patterns and naming conventions in the codebase before generating new code.
 - **Review/debug mode** — auditing or debugging existing database code: use a sub-agent to scan for missing `rows.Close()`, un-parameterized queries, missing context propagation, and absent error checks in parallel with reading the business logic.
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-database` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-database` skill takes precedence.
 
 # Go Database Best Practices
 
@@ -103,7 +104,7 @@ if !allowed[sortCol] {
 query := fmt.Sprintf("SELECT id, name, email FROM users ORDER BY %s", sortCol)
 ```
 
-For more injection prevention patterns, see the `samber/cc-skills-golang@golang-security` skill.
+For more injection prevention patterns, see the `mgrubb/agent-skills-golang@golang-security` skill.
 
 ## Struct Scanning and NULLable Columns
 
@@ -184,7 +185,7 @@ db.Query("SELECT ...")
 db.QueryContext(ctx, "SELECT ...")
 ```
 
-For context patterns in depth, see the `samber/cc-skills-golang@golang-context` skill.
+For context patterns in depth, see the `mgrubb/agent-skills-golang@golang-context` skill.
 
 ## Transactions, Isolation Levels, and Locking
 
@@ -230,10 +231,10 @@ Do not rely on triggers, views, materialized views, stored procedures, or row-le
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-security` skill for SQL injection prevention patterns
-- → See `samber/cc-skills-golang@golang-context` skill for context propagation to database operations
-- → See `samber/cc-skills-golang@golang-error-handling` skill for database error wrapping patterns
-- → See `samber/cc-skills-golang@golang-testing` skill for database integration test patterns
+- → See `mgrubb/agent-skills-golang@golang-security` skill for SQL injection prevention patterns
+- → See `mgrubb/agent-skills-golang@golang-context` skill for context propagation to database operations
+- → See `mgrubb/agent-skills-golang@golang-error-handling` skill for database error wrapping patterns
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for database integration test patterns
 
 ## References
 

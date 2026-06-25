@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.1"
   openclaw:
     emoji: "✅"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -187,9 +188,9 @@ Suite methods like `s.Equal()` behave like `assert`. For require: `s.Require().N
 
 ## Linters
 
-Use `testifylint` to catch wrong argument order, assert/require misuse, and more. See `samber/cc-skills-golang@golang-lint` skill.
+Use `testifylint` to catch wrong argument order, assert/require misuse, and more. See `mgrubb/agent-skills-golang@golang-lint` skill.
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-testing` skill for general test patterns, table-driven tests, and CI
-- → See `samber/cc-skills-golang@golang-lint` skill for testifylint configuration
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general test patterns, table-driven tests, and CI
+- → See `mgrubb/agent-skills-golang@golang-lint` skill for testifylint configuration

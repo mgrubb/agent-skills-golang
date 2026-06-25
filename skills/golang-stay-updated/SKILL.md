@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.4"
   openclaw:
     emoji: "📰"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go

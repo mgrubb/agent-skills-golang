@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.6"
   openclaw:
     emoji: "📚"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -46,7 +47,7 @@ When recommending libraries:
 
 1. **Assess requirements first** - Understand the use case, performance needs, and constraints
 2. **Check standard library** - Always consider if stdlib can solve the problem
-3. **Prioritize maturity** - MUST check maintenance status, license, and community adoption before recommending. Use a module's `imported-by` count on pkg.go.dev as a popularity and indirect quality signal — widely-imported libraries are more battle-tested and have stronger backward-compatibility pressure; → See `samber/cc-skills-golang@golang-pkg-go-dev` skill to count importers and compare alternatives
+3. **Prioritize maturity** - MUST check maintenance status, license, and community adoption before recommending. Use a module's `imported-by` count on pkg.go.dev as a popularity and indirect quality signal — widely-imported libraries are more battle-tested and have stronger backward-compatibility pressure; → See `mgrubb/agent-skills-golang@golang-pkg-go-dev` skill to count importers and compare alternatives
 4. **Consider complexity** - Simpler solutions are usually better in Go
 5. **Think about dependencies** - More dependencies = more attack surface and maintenance burden
 
@@ -62,9 +63,9 @@ Remember: The best library is often no library at all. Go's standard library is 
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-dependency-management` skill for adding, auditing, and managing dependencies
-- → See `samber/cc-skills-golang@golang-pkg-go-dev` skill to vet a candidate library on pkg.go.dev — versions, importers, licenses, and known vulnerabilities — before adopting it
-- → See `samber/cc-skills-golang@golang-samber-do` skill for samber/do dependency injection details
-- → See `samber/cc-skills-golang@golang-samber-oops` skill for samber/oops error handling details
-- → See `samber/cc-skills-golang@golang-stretchr-testify` skill for testify testing details
-- → See `samber/cc-skills-golang@golang-grpc` skill for gRPC implementation details
+- → See `mgrubb/agent-skills-golang@golang-dependency-management` skill for adding, auditing, and managing dependencies
+- → See `mgrubb/agent-skills-golang@golang-pkg-go-dev` skill to vet a candidate library on pkg.go.dev — versions, importers, licenses, and known vulnerabilities — before adopting it
+- → See `mgrubb/agent-skills-golang@golang-samber-do` skill for samber/do dependency injection details
+- → See `mgrubb/agent-skills-golang@golang-samber-oops` skill for samber/oops error handling details
+- → See `mgrubb/agent-skills-golang@golang-stretchr-testify` skill for testify testing details
+- → See `mgrubb/agent-skills-golang@golang-grpc` skill for gRPC implementation details

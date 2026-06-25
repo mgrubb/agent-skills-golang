@@ -1,15 +1,16 @@
 ---
 name: golang-spf13-viper
-description: "Golang configuration library using spf13/viper — layered precedence (flag > env > file > KV > default), BindPFlag/BindPFlags, SetEnvPrefix + SetEnvKeyReplacer + AutomaticEnv, ReadInConfig + ConfigFileNotFoundError, Unmarshal + mapstructure struct tags, Sub for sub-trees, WatchConfig + OnConfigChange for hot reload, viper.New() for test isolation, and remote KV integration. Apply when using or adopting spf13/viper, or when the codebase imports `github.com/spf13/viper`. For CLI command structure alongside viper, see the `samber/cc-skills-golang@golang-spf13-cobra` skill. For general CLI architecture, see `samber/cc-skills-golang@golang-cli`."
+description: "Golang configuration library using spf13/viper — layered precedence (flag > env > file > KV > default), BindPFlag/BindPFlags, SetEnvPrefix + SetEnvKeyReplacer + AutomaticEnv, ReadInConfig + ConfigFileNotFoundError, Unmarshal + mapstructure struct tags, Sub for sub-trees, WatchConfig + OnConfigChange for hot reload, viper.New() for test isolation, and remote KV integration. Apply when using or adopting spf13/viper, or when the codebase imports `github.com/spf13/viper`. For CLI command structure alongside viper, see the `mgrubb/agent-skills-golang@golang-spf13-cobra` skill. For general CLI architecture, see `mgrubb/agent-skills-golang@golang-cli`."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.2"
   openclaw:
     emoji: "🔧"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -39,7 +40,7 @@ go get github.com/spf13/viper@latest
 
 Cobra owns the command tree — subcommands, flags, arg validation, completions. Viper owns configuration resolution — it answers "what is the value of key X?" by walking its source layers. Viper has no user-facing surface; it is purely a key-value resolver. Use cobra alone for flag-only CLIs; viper alone for config-file daemons; both when you need both, binding flags at `PersistentPreRunE` via `BindPFlag`.
 
-→ See `samber/cc-skills-golang@golang-spf13-cobra` for the cobra side of this integration.
+→ See `mgrubb/agent-skills-golang@golang-spf13-cobra` for the cobra side of this integration.
 
 ## The precedence pipeline
 
@@ -173,8 +174,8 @@ For `t.Setenv` interactions and `Reset()` limitations, see [testing-and-isolatio
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-cli` skill for general CLI architecture — project layout, exit codes, signal handling, cobra+viper integration
-- → See `samber/cc-skills-golang@golang-spf13-cobra` skill for the cobra side of this integration (flag definition and binding)
-- → See `samber/cc-skills-golang@golang-testing` skill for general Go testing patterns
+- → See `mgrubb/agent-skills-golang@golang-cli` skill for general CLI architecture — project layout, exit codes, signal handling, cobra+viper integration
+- → See `mgrubb/agent-skills-golang@golang-spf13-cobra` skill for the cobra side of this integration (flag definition and binding)
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general Go testing patterns
 
 If you encounter a bug or unexpected behavior in spf13/viper, open an issue at <https://github.com/spf13/viper/issues>.

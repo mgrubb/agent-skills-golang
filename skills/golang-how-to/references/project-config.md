@@ -67,14 +67,14 @@ Additional skills to suggest based on codebase context:
 ```markdown
 ## Required Go skills
 
-The following Go skills from `samber/cc-skills-golang` MUST always be applied when working on this project. Load them at the start of every Go-related task, regardless of whether the user explicitly mentions them.
+The following Go skills from `mgrubb/agent-skills-golang` MUST always be applied when working on this project. Load them at the start of every Go-related task, regardless of whether the user explicitly mentions them.
 
-- `samber/cc-skills-golang@golang-error-handling`
-- `samber/cc-skills-golang@golang-security`
-- `samber/cc-skills-golang@golang-testing`
+- `mgrubb/agent-skills-golang@golang-error-handling`
+- `mgrubb/agent-skills-golang@golang-security`
+- `mgrubb/agent-skills-golang@golang-testing`
 ```
 
-Replace the skill list with the confirmed set from Step 3. Use the fully-qualified `samber/cc-skills-golang@<name>` identifier for each skill.
+Replace the skill list with the confirmed set from Step 3. Use the fully-qualified `mgrubb/agent-skills-golang@<name>` identifier for each skill.
 
 ### Insertion point
 
@@ -103,12 +103,12 @@ After writing, summarize:
 
 ## Notes on company overrides (⚙️ skills)
 
-Skills marked ⚙️ in the README support company overrides. If the project has a company skill that supersedes a community default (e.g., `acme/cc-skills@golang-error-handling-acme` supersedes `samber/cc-skills-golang@golang-error-handling`), use the company skill FQN in the block instead — do NOT list both.
+Skills marked ⚙️ in the README support company overrides. If the project has a company skill that supersedes a community default (e.g., `acme/cc-skills@golang-error-handling-acme` supersedes `mgrubb/agent-skills-golang@golang-error-handling`), use the company skill FQN in the block instead — do NOT list both.
 
 To declare an override in a company skill body, add near the top:
 
 ```
-> This skill supersedes `samber/cc-skills-golang@golang-error-handling` for [Company] projects.
+> This skill supersedes `mgrubb/agent-skills-golang@golang-error-handling` for [Company] projects.
 ```
 
 Overridable skills: `golang-code-style`, `golang-concurrency`, `golang-context`, `golang-database`, `golang-dependency-injection`, `golang-design-patterns`, `golang-documentation`, `golang-error-handling`, `golang-naming`, `golang-observability`, `golang-structs-interfaces`, `golang-testing`.

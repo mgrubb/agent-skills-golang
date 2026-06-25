@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.4"
   openclaw:
     emoji: "📦"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -40,7 +41,7 @@ Before proposing a dependency, evaluate:
 - Are there well-known alternatives?
 - What it does and why it's needed?
 
-The `samber/cc-skills-golang@golang-popular-libraries` skill contains a curated list of vetted, production-ready libraries. Prefer recommending packages from that list. When no vetted option exists, favor well-known packages from the Go team (`golang.org/x/...`) or established organizations over obscure alternatives.
+The `mgrubb/agent-skills-golang@golang-popular-libraries` skill contains a curated list of vetted, production-ready libraries. Prefer recommending packages from that list. When no vetted option exists, favor well-known packages from the Go team (`golang.org/x/...`) or established organizations over obscure alternatives.
 
 ## Key Rules
 
@@ -186,9 +187,9 @@ For future Go versions, use the project's intended target version. Do not use AP
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for Dependabot/Renovate CI setup
-- → See `samber/cc-skills-golang@golang-security` skill for vulnerability scanning with govulncheck
-- → See `samber/cc-skills-golang@golang-popular-libraries` skill for vetted library recommendations
+- → See `mgrubb/agent-skills-golang@golang-continuous-integration` skill for Dependabot/Renovate CI setup
+- → See `mgrubb/agent-skills-golang@golang-security` skill for vulnerability scanning with govulncheck
+- → See `mgrubb/agent-skills-golang@golang-popular-libraries` skill for vetted library recommendations
 
 ## Quick Reference
 

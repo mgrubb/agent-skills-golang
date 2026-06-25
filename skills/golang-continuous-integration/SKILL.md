@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.3.1"
   openclaw:
     emoji: "🚀"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -107,7 +108,7 @@ Use `-count=1` to disable test caching — cached results can hide flaky service
 
 ### golangci-lint Configuration
 
-Create `.golangci.yml` at the root of the project. See the `samber/cc-skills-golang@golang-lint` skill for the recommended configuration.
+Create `.golangci.yml` at the root of the project. See the `mgrubb/agent-skills-golang@golang-lint` skill for the recommended configuration.
 
 ---
 
@@ -247,7 +248,7 @@ The Claude Code GitHub App integration is configured via the `/install-github-ap
 Copy skills into your repo, then append [copilot-review-instructions.md](./assets/copilot-review-instructions.md) to `.github/copilot-instructions.md`:
 
 ```bash
-npx skills add https://github.com/samber/cc-skills-golang --agent github-copilot --skill '*' -y --copy
+npx skills add https://github.com/mgrubb/agent-skills-golang --agent github-copilot --skill '*' -y --copy
 ln -s .agents .copilot
 ```
 
@@ -269,4 +270,4 @@ ln -s .agents .copilot
 
 ## Related Skills
 
-See `samber/cc-skills-golang@golang-lint`, `samber/cc-skills-golang@golang-security`, `samber/cc-skills-golang@golang-testing`, `samber/cc-skills-golang@golang-dependency-management`, `samber/cc-skills-golang@golang-modernize` skills.
+See `mgrubb/agent-skills-golang@golang-lint`, `mgrubb/agent-skills-golang@golang-security`, `mgrubb/agent-skills-golang@golang-testing`, `mgrubb/agent-skills-golang@golang-dependency-management`, `mgrubb/agent-skills-golang@golang-modernize` skills.

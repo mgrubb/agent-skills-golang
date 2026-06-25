@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.5"
   openclaw:
     emoji: "🪵"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -220,9 +221,9 @@ For configuration examples and shutdown patterns, see [Backend Handlers](referen
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-observability` skill for slog fundamentals (levels, context, handler setup, migration)
-- → See `samber/cc-skills-golang@golang-error-handling` skill for the log-or-return rule
-- → See `samber/cc-skills-golang@golang-security` skill for PII handling in logs
-- → See `samber/cc-skills-golang@golang-samber-oops` skill for structured error context with `samber/oops`
+- → See `mgrubb/agent-skills-golang@golang-observability` skill for slog fundamentals (levels, context, handler setup, migration)
+- → See `mgrubb/agent-skills-golang@golang-error-handling` skill for the log-or-return rule
+- → See `mgrubb/agent-skills-golang@golang-security` skill for PII handling in logs
+- → See `mgrubb/agent-skills-golang@golang-samber-oops` skill for structured error context with `samber/oops`
 
 If you encounter a bug or unexpected behavior in any samber/slog-\* package, open an issue at the relevant repository (e.g., [slog-multi/issues](https://github.com/samber/slog-multi/issues), [slog-sampling/issues](https://github.com/samber/slog-sampling/issues)).

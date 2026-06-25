@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.4"
   openclaw:
     emoji: "⚡"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -25,7 +26,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 - **Review mode** — reviewing a PR's concurrent code changes. Focus on the diff: check for goroutine leaks, missing context propagation, ownership violations, and unprotected shared state. Sequential.
 - **Audit mode** — auditing existing concurrent code across a codebase. Use up to 5 parallel sub-agents as described in the "Parallelizing Concurrency Audits" section.
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-concurrency` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-concurrency` skill takes precedence.
 
 # Go Concurrency Best Practices
 
@@ -121,12 +122,12 @@ When auditing concurrency across a large codebase, use up to 5 parallel sub-agen
 
 ## Cross-References
 
-- -> See `samber/cc-skills-golang@golang-performance` skill for false sharing, cache-line padding, `sync.Pool` hot-path patterns
-- -> See `samber/cc-skills-golang@golang-context` skill for cancellation propagation and timeout patterns
-- -> See `samber/cc-skills-golang@golang-safety` skill for concurrent map access and race condition prevention
-- -> See `samber/cc-skills-golang@golang-troubleshooting` skill for debugging goroutine leaks and deadlocks
-- -> See `samber/cc-skills-golang@golang-design-patterns` skill for graceful shutdown patterns
-- -> See `samber/cc-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
+- -> See `mgrubb/agent-skills-golang@golang-performance` skill for false sharing, cache-line padding, `sync.Pool` hot-path patterns
+- -> See `mgrubb/agent-skills-golang@golang-context` skill for cancellation propagation and timeout patterns
+- -> See `mgrubb/agent-skills-golang@golang-safety` skill for concurrent map access and race condition prevention
+- -> See `mgrubb/agent-skills-golang@golang-troubleshooting` skill for debugging goroutine leaks and deadlocks
+- -> See `mgrubb/agent-skills-golang@golang-design-patterns` skill for graceful shutdown patterns
+- -> See `mgrubb/agent-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
 
 ### Go 1.26 experimental goroutine leak profile
 

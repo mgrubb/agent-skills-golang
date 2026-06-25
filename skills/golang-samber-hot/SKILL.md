@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.4"
   openclaw:
     emoji: "🔥"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -129,7 +130,7 @@ If you encounter a bug or unexpected behavior in samber/hot, open an issue at <h
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for general caching strategy and when to use in-memory cache vs Redis vs CDN
-- → See `samber/cc-skills-golang@golang-observability` skill for Prometheus metrics integration and monitoring
-- → See `samber/cc-skills-golang@golang-database` skill for database query patterns that pair with cache loaders
+- → See `mgrubb/agent-skills-golang@golang-performance` skill for general caching strategy and when to use in-memory cache vs Redis vs CDN
+- → See `mgrubb/agent-skills-golang@golang-observability` skill for Prometheus metrics integration and monitoring
+- → See `mgrubb/agent-skills-golang@golang-database` skill for database query patterns that pair with cache loaders
 - → See `samber/cc-skills@promql-cli` skill for querying Prometheus cache metrics via CLI

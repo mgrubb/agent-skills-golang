@@ -1,15 +1,16 @@
 ---
 name: golang-code-style
-description: "Golang code style conventions — line length and breaking, variable declarations, control flow clarity, when comments help vs hurt. Use when writing or reviewing Go code, asking about style or clarity, or establishing project coding standards. Not for naming conventions (→ See `samber/cc-skills-golang@golang-naming` skill), linter configuration (→ See `samber/cc-skills-golang@golang-lint` skill), or doc comments (→ See `samber/cc-skills-golang@golang-documentation` skill)."
+description: "Golang code style conventions — line length and breaking, variable declarations, control flow clarity, when comments help vs hurt. Use when writing or reviewing Go code, asking about style or clarity, or establishing project coding standards. Not for naming conventions (→ See `mgrubb/agent-skills-golang@golang-naming` skill), linter configuration (→ See `mgrubb/agent-skills-golang@golang-lint` skill), or doc comments (→ See `mgrubb/agent-skills-golang@golang-documentation` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.0"
   openclaw:
     emoji: "🎨"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -17,11 +18,11 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(git:*) Agent
 ---
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-code-style` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-code-style` skill takes precedence.
 
 # Go Code Style
 
-Style rules that require human judgment — linters handle formatting, this skill handles clarity. For naming see `samber/cc-skills-golang@golang-naming` skill; for design patterns see `samber/cc-skills-golang@golang-design-patterns` skill; for struct/interface design see `samber/cc-skills-golang@golang-structs-interfaces` skill.
+Style rules that require human judgment — linters handle formatting, this skill handles clarity. For naming see `mgrubb/agent-skills-golang@golang-naming` skill; for design patterns see `mgrubb/agent-skills-golang@golang-design-patterns` skill; for struct/interface design see `mgrubb/agent-skills-golang@golang-structs-interfaces` skill.
 
 > "Clear is better than clever." — Go Proverbs
 
@@ -167,7 +168,7 @@ default:
 ## Function Design
 
 - Functions SHOULD be **short and focused** — one function, one job.
-- Functions SHOULD have **≤4 parameters**. Beyond that, use an options struct (see `samber/cc-skills-golang@golang-design-patterns` skill).
+- Functions SHOULD have **≤4 parameters**. Beyond that, use an options struct (see `mgrubb/agent-skills-golang@golang-design-patterns` skill).
 - **Parameter order**: `context.Context` first, then inputs, then output destinations.
 - Naked returns help in very short functions (1-3 lines) where return values are obvious, but become confusing when readers must scroll to find what's returned — name returns explicitly in longer functions.
 
@@ -225,12 +226,12 @@ When reviewing code style across a large codebase, use up to 5 parallel sub-agen
 
 ## Enforce with Linters
 
-Many rules are enforced automatically: `gofmt`, `gofumpt`, `goimports`, `gocritic`, `revive`, `wsl_v5`. → See the `samber/cc-skills-golang@golang-lint` skill.
+Many rules are enforced automatically: `gofmt`, `gofumpt`, `goimports`, `gocritic`, `revive`, `wsl_v5`. → See the `mgrubb/agent-skills-golang@golang-lint` skill.
 
 ## Cross-References
 
-- → See the `samber/cc-skills-golang@golang-naming` skill for identifier naming conventions
-- → See the `samber/cc-skills-golang@golang-structs-interfaces` skill for pointer vs value receivers, interface design
-- → See the `samber/cc-skills-golang@golang-design-patterns` skill for functional options, builders, constructors
-- → See the `samber/cc-skills-golang@golang-lint` skill for automated formatting enforcement
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
+- → See the `mgrubb/agent-skills-golang@golang-naming` skill for identifier naming conventions
+- → See the `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for pointer vs value receivers, interface design
+- → See the `mgrubb/agent-skills-golang@golang-design-patterns` skill for functional options, builders, constructors
+- → See the `mgrubb/agent-skills-golang@golang-lint` skill for automated formatting enforcement
+- → See `mgrubb/agent-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines

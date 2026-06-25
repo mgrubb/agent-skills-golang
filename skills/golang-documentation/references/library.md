@@ -1,6 +1,6 @@
 # Library Documentation
 
-→ See `samber/cc-skills-golang@golang-testing` skill for writing effective Example test functions.
+→ See `mgrubb/agent-skills-golang@golang-testing` skill for writing effective Example test functions.
 
 ## Public vs Private Libraries
 

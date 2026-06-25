@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.4"
   openclaw:
     emoji: "💥"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -272,5 +273,5 @@ For assertions, configuration, and additional logger examples, see [Advanced pat
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-error-handling` skill for general error handling patterns
-- → See `samber/cc-skills-golang@golang-observability` skill for logger integration and structured logging
+- → See `mgrubb/agent-skills-golang@golang-error-handling` skill for general error handling patterns
+- → See `mgrubb/agent-skills-golang@golang-observability` skill for logger integration and structured logging

@@ -1,15 +1,16 @@
 ---
 name: golang-google-wire
-description: "Compile-time dependency injection in Golang using google/wire — wire.NewSet, wire.Build, wire.Bind (interface→concrete), wire.Struct, wire.Value, wire.InterfaceValue, wire.FieldsOf, cleanup functions, //go:build wireinject injector files, and generated wire_gen.go. Apply when using or adopting google/wire, when the codebase imports `github.com/google/wire`, or when wiring an application graph at compile time via `wire.Build`. For runtime DI with reflection, see `samber/cc-skills-golang@golang-uber-dig` skill."
+description: "Compile-time dependency injection in Golang using google/wire — wire.NewSet, wire.Build, wire.Bind (interface→concrete), wire.Struct, wire.Value, wire.InterfaceValue, wire.FieldsOf, cleanup functions, //go:build wireinject injector files, and generated wire_gen.go. Apply when using or adopting google/wire, when the codebase imports `github.com/google/wire`, or when wiring an application graph at compile time via `wire.Build`. For runtime DI with reflection, see `mgrubb/agent-skills-golang@golang-uber-dig` skill."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.4"
   openclaw:
     emoji: "🪡"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -53,7 +54,7 @@ go get github.com/google/wire
 | Lifecycle hooks   | Not built in              | fx: OnStart/OnStop     |
 | Generated files   | `wire_gen.go` (committed) | None                   |
 
-For lifecycle, lazy loading, and a full matrix see `samber/cc-skills-golang@golang-dependency-injection`.
+For lifecycle, lazy loading, and a full matrix see `mgrubb/agent-skills-golang@golang-dependency-injection`.
 
 ## Providers
 
@@ -219,11 +220,11 @@ Wire generates plain Go constructors, so unit tests use manual injection — no 
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
-- → See `samber/cc-skills-golang@golang-uber-dig` skill for runtime reflection-based DI without lifecycle
-- → See `samber/cc-skills-golang@golang-uber-fx` skill for runtime DI with lifecycle hooks, modules, and signal-aware Run()
-- → See `samber/cc-skills-golang@golang-samber-do` skill for generics-based DI without reflection
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for interface design patterns
-- → See `samber/cc-skills-golang@golang-testing` skill for general testing patterns
+- → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
+- → See `mgrubb/agent-skills-golang@golang-uber-dig` skill for runtime reflection-based DI without lifecycle
+- → See `mgrubb/agent-skills-golang@golang-uber-fx` skill for runtime DI with lifecycle hooks, modules, and signal-aware Run()
+- → See `mgrubb/agent-skills-golang@golang-samber-do` skill for generics-based DI without reflection
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for interface design patterns
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general testing patterns
 
 If you encounter a bug or unexpected behavior in google/wire, open an issue at <https://github.com/google/wire/issues>.

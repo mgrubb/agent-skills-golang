@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   lint:
-    if: github.event_name != 'schedule' || github.repository_owner == 'samber'
+    if: github.event_name != 'schedule' || github.repository_owner == 'mgrubb'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

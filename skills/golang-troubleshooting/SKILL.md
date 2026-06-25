@@ -1,15 +1,16 @@
 ---
 name: golang-troubleshooting
-description: "Troubleshoot Golang programs systematically - find and fix the root cause. Use when encountering bugs, crashes, deadlocks, or unexpected behavior in Go code. Covers debugging methodology, common Go pitfalls, test-driven debugging, pprof setup and capture, Delve debugger, race detection, GODEBUG tracing, and production debugging. Start here for any 'something is wrong' situation. Not for interpreting profiles or benchmarking (→ See `samber/cc-skills-golang@golang-benchmark` skill) or applying optimization patterns (→ See `samber/cc-skills-golang@golang-performance` skill)."
+description: "Troubleshoot Golang programs systematically - find and fix the root cause. Use when encountering bugs, crashes, deadlocks, or unexpected behavior in Go code. Covers debugging methodology, common Go pitfalls, test-driven debugging, pprof setup and capture, Delve debugger, race detection, GODEBUG tracing, and production debugging. Start here for any 'something is wrong' situation. Not for interpreting profiles or benchmarking (→ See `mgrubb/agent-skills-golang@golang-benchmark` skill) or applying optimization patterns (→ See `mgrubb/agent-skills-golang@golang-performance` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.2"
   openclaw:
     emoji: "🔍"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -186,7 +187,7 @@ If any of these are happening, stop and return to Step 1:
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for optimization patterns after identifying bottlenecks
-- → See `samber/cc-skills-golang@golang-observability` skill for metrics, alerting, and Grafana dashboards for Go runtime monitoring
+- → See `mgrubb/agent-skills-golang@golang-performance` skill for optimization patterns after identifying bottlenecks
+- → See `mgrubb/agent-skills-golang@golang-observability` skill for metrics, alerting, and Grafana dashboards for Go runtime monitoring
 - → See `samber/cc-skills@promql-cli` skill for querying Prometheus metrics during production incident investigation
-- → See `samber/cc-skills-golang@golang-concurrency`, `samber/cc-skills-golang@golang-safety`, `samber/cc-skills-golang@golang-error-handling` skills
+- → See `mgrubb/agent-skills-golang@golang-concurrency`, `mgrubb/agent-skills-golang@golang-safety`, `mgrubb/agent-skills-golang@golang-error-handling` skills

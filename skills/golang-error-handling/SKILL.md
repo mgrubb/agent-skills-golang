@@ -1,15 +1,16 @@
 ---
 name: golang-error-handling
-description: "Idiomatic Golang error handling — creation, wrapping with %w, errors.Is/As, errors.Join, custom error types, sentinel errors, panic/recover, the single handling rule, structured logging with slog, HTTP request logging middleware, and samber/oops for production errors. Built to make logs usable at scale with log aggregation 3rd-party tools. Apply when creating, wrapping, inspecting, or logging errors in Go code. For samber/oops specifics → See `samber/cc-skills-golang@golang-samber-oops` skill; for slog handler ecosystem → See `samber/cc-skills-golang@golang-samber-slog` skill."
+description: "Idiomatic Golang error handling — creation, wrapping with %w, errors.Is/As, errors.Join, custom error types, sentinel errors, panic/recover, the single handling rule, structured logging with slog, HTTP request logging middleware, and samber/oops for production errors. Built to make logs usable at scale with log aggregation 3rd-party tools. Apply when creating, wrapping, inspecting, or logging errors in Go code. For samber/oops specifics → See `mgrubb/agent-skills-golang@golang-samber-oops` skill; for slog handler ecosystem → See `mgrubb/agent-skills-golang@golang-samber-slog` skill."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.0"
   openclaw:
     emoji: "⚠"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -25,7 +26,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 - **Review mode** — reviewing a PR's error handling changes. Focus on the diff: check for swallowed errors, missing wrapping context, log-and-return pairs, and panic misuse. Sequential.
 - **Audit mode** — auditing existing error handling across a codebase. Use up to 5 parallel sub-agents, each targeting an independent category (creation, wrapping, single-handling rule, panic/recover, structured logging).
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-error-handling` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-error-handling` skill takes precedence.
 
 # Go Error Handling Best Practices
 
@@ -69,11 +70,11 @@ When auditing error handling across a large codebase, use up to 5 parallel sub-a
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-samber-oops` for full samber/oops API, builder patterns, and logger integration
-- → See `samber/cc-skills-golang@golang-observability` for structured logging setup, log levels, and request logging middleware
-- → See `samber/cc-skills-golang@golang-safety` for nil interface trap and nil error comparison pitfalls
-- → See `samber/cc-skills-golang@golang-naming` for error naming conventions (ErrNotFound, PathError)
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
+- → See `mgrubb/agent-skills-golang@golang-samber-oops` for full samber/oops API, builder patterns, and logger integration
+- → See `mgrubb/agent-skills-golang@golang-observability` for structured logging setup, log levels, and request logging middleware
+- → See `mgrubb/agent-skills-golang@golang-safety` for nil interface trap and nil error comparison pitfalls
+- → See `mgrubb/agent-skills-golang@golang-naming` for error naming conventions (ErrNotFound, PathError)
+- → See `mgrubb/agent-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
 
 ## References
 

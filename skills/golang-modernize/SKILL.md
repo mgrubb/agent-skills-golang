@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.2"
   openclaw:
     emoji: "🔄"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -80,7 +81,7 @@ When the project's `go.mod` targets an older version, suggest upgrading and expl
 
 ## Using the modernize linter
 
-The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and Go 1.26's rewritten `go fix` cover overlapping modernization checks, but exact coverage differs by tool version. See the `samber/cc-skills-golang@golang-lint` skill for configuration.
+The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and Go 1.26's rewritten `go fix` cover overlapping modernization checks, but exact coverage differs by tool version. See the `mgrubb/agent-skills-golang@golang-lint` skill for configuration.
 
 ## Version-specific modernizations
 
@@ -145,8 +146,8 @@ When modernizing a codebase, prioritize changes by impact:
 23. Add `govulncheck` to CI pipeline
 24. Set up monthly modernization CI pipeline
 25. Evaluate `encoding/json/v2` only when the project explicitly opts into `GOEXPERIMENT=jsonv2` _(Go 1.25+, experimental)_
-26. Set up AI-driven code review in CI — loads these skills to guide review per area; see `samber/cc-skills-golang@golang-continuous-integration`
+26. Set up AI-driven code review in CI — loads these skills to guide review per area; see `mgrubb/agent-skills-golang@golang-continuous-integration`
 
 ## Related Skills
 
-See `samber/cc-skills-golang@golang-concurrency`, `samber/cc-skills-golang@golang-testing`, `samber/cc-skills-golang@golang-observability`, `samber/cc-skills-golang@golang-error-handling`, `samber/cc-skills-golang@golang-lint`, `samber/cc-skills-golang@golang-continuous-integration` skills.
+See `mgrubb/agent-skills-golang@golang-concurrency`, `mgrubb/agent-skills-golang@golang-testing`, `mgrubb/agent-skills-golang@golang-observability`, `mgrubb/agent-skills-golang@golang-error-handling`, `mgrubb/agent-skills-golang@golang-lint`, `mgrubb/agent-skills-golang@golang-continuous-integration` skills.

@@ -19,7 +19,7 @@ go get toolchain@latest
 
 ## golangci-lint v2 _(golangci-lint v2.0.0+, March 2025)_
 
-Upgrade to golangci-lint v2. **Migration**: Run `golangci-lint migrate` to convert v1 config to v2. See the `samber/cc-skills-golang@golang-lint` skill for the recommended configuration.
+Upgrade to golangci-lint v2. **Migration**: Run `golangci-lint migrate` to convert v1 config to v2. See the `mgrubb/agent-skills-golang@golang-lint` skill for the recommended configuration.
 
 ## govulncheck _(works best with Go 1.22+)_
 
@@ -57,4 +57,4 @@ Go 1.22+ expanded PGO to devirtualize more interface calls. Go 1.23+ reduced PGO
 
 Add an AI agent as a PR reviewer alongside traditional static analysis. When configured with this skill plugin, the agent loads the relevant Go skills — `golang-security` for security review, `golang-concurrency` for concurrency issues, `golang-error-handling` for error handling, and so on — giving it the same expertise as a senior Go reviewer. This catches architectural drift, logic bugs, missing context in errors, and subtle concurrency hazards that linters cannot detect.
 
-See the `samber/cc-skills-golang@golang-continuous-integration` skill for ready-to-use GitHub Actions assets for both Claude Code and GitHub Copilot.
+See the `mgrubb/agent-skills-golang@golang-continuous-integration` skill for ready-to-use GitHub Actions assets for both Claude Code and GitHub Copilot.

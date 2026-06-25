@@ -118,7 +118,7 @@ For projects that warrant a formal architecture (typically 5K+ lines), see the d
 
 ## 12-Factor App Principles
 
-→ See `samber/cc-skills-golang@golang-project-layout` for 12-Factor App conventions.
+→ See `mgrubb/agent-skills-golang@golang-project-layout` for 12-Factor App conventions.
 
 ## Explicit Over Implicit
 
@@ -148,4 +148,4 @@ func (h *Handler) HandleRequest(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-→ See `samber/cc-skills-golang@golang-project-layout` skill for directory structure and layout patterns.
+→ See `mgrubb/agent-skills-golang@golang-project-layout` skill for directory structure and layout patterns.

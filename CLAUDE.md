@@ -43,7 +43,7 @@ Every skill MUST include a `metadata.openclaw` block for [ClawHub](https://githu
 | Field | Required | Description |
 | --- | --- | --- |
 | `emoji` | Yes | Display emoji for the skill (single emoji string) |
-| `homepage` | Yes | URL to the skill's homepage. Use `https://github.com/samber/cc-skills-golang` for this project. |
+| `homepage` | Yes | URL to the skill's homepage. Use `https://github.com/mgrubb/agent-skills-golang` for this project. |
 | `requires.bins` | Yes | CLI binaries that must be installed. Always includes `go`. Add skill-specific critical bins (e.g. `protoc`, `dlv`). |
 | `install` | Yes | Array of auto-installable dependencies. Use `[]` when no extra deps needed. Supported kinds: `brew`, `go`, `node`, `uv`. Each entry has `kind`, `formula`/`package`, and `bins` fields. |
 | `skill-library-version` | Optional (when covering a library/framework) | Semver or release tag of the library/framework/platform the skill was written against (e.g. `"2.1.0"`). Required for skills that document a specific third-party project so staleness can be detected. Omit for generic/content skills with no versioned dependency. |
@@ -58,11 +58,11 @@ user-invocable: false
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents. Requires go compiler and git.
 metadata:
-  author: samber
+  author: mgrubb
   version: "1.0.0"
   openclaw:
     emoji: "🔧"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -76,11 +76,11 @@ Example with extra dependencies:
 
 ```yaml
 metadata:
-  author: samber
+  author: mgrubb
   version: "1.0.0"
   openclaw:
     emoji: "🌐"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -276,7 +276,7 @@ Update the README.md Ultrathink column (🧠 emoji) to keep track of skills requ
 
 When a skill mentions an important tool (e.g. `go test`, `pprof`, `dlv`, `benchstat`), create a `references/` markdown file with a comprehensive reference section listing many command examples. This helps users discover tool capabilities without leaving the skill content.
 
-**Example:** For the `samber/cc-skills-golang@golang-testing` skill, create `references/go-test.md` with examples like:
+**Example:** For the `mgrubb/agent-skills-golang@golang-testing` skill, create `references/go-test.md` with examples like:
 
 ```bash
 go test ./...                          # all tests
@@ -325,12 +325,12 @@ Each concept must live in exactly one skill. Skills cross-reference each other i
 
 Four skills cover performance and observability with distinct ownership:
 
-- **`samber/cc-skills-golang@golang-performance`** - optimization patterns and methodology ("if X bottleneck, then apply Y")
-- **`samber/cc-skills-golang@golang-benchmark`** - measurement methodology, deep analysis, profiling interpretation, benchstat, CI regression detection
-- **`samber/cc-skills-golang@golang-troubleshooting`** - debugging workflow, root cause finding, pprof setup/capture, Delve, GODEBUG
-- **`samber/cc-skills-golang@golang-observability`** - everyday continuous monitoring (logs, metrics, tracing, alerts) - always-on signals
+- **`mgrubb/agent-skills-golang@golang-performance`** - optimization patterns and methodology ("if X bottleneck, then apply Y")
+- **`mgrubb/agent-skills-golang@golang-benchmark`** - measurement methodology, deep analysis, profiling interpretation, benchstat, CI regression detection
+- **`mgrubb/agent-skills-golang@golang-troubleshooting`** - debugging workflow, root cause finding, pprof setup/capture, Delve, GODEBUG
+- **`mgrubb/agent-skills-golang@golang-observability`** - everyday continuous monitoring (logs, metrics, tracing, alerts) - always-on signals
 
-The first three form a "deep analysis" cluster for temporary focused investigation. `samber/cc-skills-golang@golang-observability` covers the always-on production signals. Each concept lives in exactly one skill.
+The first three form a "deep analysis" cluster for temporary focused investigation. `mgrubb/agent-skills-golang@golang-observability` covers the always-on production signals. Each concept lives in exactly one skill.
 
 ### Atomic skills and deduplication
 
@@ -342,9 +342,9 @@ Some skills are community defaults, not mandates. They include a note at the top
 
 **To override a generic skill**, add this line near the top of your company skill's body (replace `<skill-name>` with the target):
 
-> This skill supersedes `samber/cc-skills-golang@<skill-name>` skill for [company] projects.
+> This skill supersedes `mgrubb/agent-skills-golang@<skill-name>` skill for [company] projects.
 
-The override is skill-specific: your company skill must name each generic skill it supersedes. Plugin-wide override (`samber/cc-skills-golang`) is not supported — be explicit. The README skills table (Override column) lists which skills support this.
+The override is skill-specific: your company skill must name each generic skill it supersedes. Plugin-wide override (`mgrubb/agent-skills-golang`) is not supported — be explicit. The README skills table (Override column) lists which skills support this.
 
 ### Cross-skill references
 
@@ -352,21 +352,21 @@ Skills use the `owner/repo@skill:version` identifier format for cross-references
 
 | Segment | Required | Description | Example |
 | --- | --- | --- | --- |
-| `owner` | yes | GitHub owner or organization | `samber` |
-| `repo` | yes | Repository name | `cc-skills-golang` |
+| `owner` | yes | GitHub owner or organization | `mgrubb` |
+| `repo` | yes | Repository name | `agent-skills-golang` |
 | `skill` | yes | Skill name (from frontmatter `name` field) | `golang-security` |
 | `version` | no | Semver version — omit unless pinning matters | `1.2.0` |
 
-**Full form:** `samber/cc-skills-golang@golang-security:1.2.0` **Common form (no version):** `samber/cc-skills-golang@golang-security`
+**Full form:** `mgrubb/agent-skills-golang@golang-security:1.2.0` **Common form (no version):** `mgrubb/agent-skills-golang@golang-security`
 
 Always use the fully-qualified `owner/repo@skill` form in backticks, even for references within the same plugin. This makes every reference portable, searchable, and unambiguous regardless of where the skill is consumed.
 
-**Inline:** see the `samber/cc-skills-golang@golang-database` skill. **Arrow-prefixed lists:** "→ See `samber/cc-skills-golang@golang-database` skill for …"
+**Inline:** see the `mgrubb/agent-skills-golang@golang-database` skill. **Arrow-prefixed lists:** "→ See `mgrubb/agent-skills-golang@golang-database` skill for …"
 
 **Install mapping:** the identifier maps to skills CLI commands:
 
-- `samber/cc-skills-golang@golang-security` → `npx skills add samber/cc-skills-golang --skill golang-security`
-- `samber/cc-skills-golang` → `npx skills add samber/cc-skills-golang`
+- `mgrubb/agent-skills-golang@golang-security` → `npx skills add mgrubb/agent-skills-golang --skill golang-security`
+- `mgrubb/agent-skills-golang` → `npx skills add mgrubb/agent-skills-golang`
 
 ### Large repository research
 
@@ -384,7 +384,7 @@ Skills should NOT re-explain rules that are already enforced by linters (e.g. go
 
 Skills MUST teach Claude how to think about problems, not just list prescriptive rules. Every recommendation needs a "why" — what goes wrong without it, what consequence the reader avoids. Bare imperatives like "NEVER do X" without rationale are not acceptable.
 
-When a recommendation addresses a problem that can be confirmed with a diagnostic tool, add a **`Diagnose:`** line indicating which tool(s) to use to validate the hypothesis before applying the fix. This is essential in performance-oriented skills (`samber/cc-skills-golang@golang-performance`) but also useful in any skill where a tool can confirm the root cause (e.g. race detector for concurrency, `go vet` for safety, `govulncheck` for security). The diagnostic tool must NOT apply the fix automatically (e.g. never use `--fix` flags) — let the LLM interpret the diagnostic output and perform the improvement itself, so changes are tracked and can include explanatory comments.
+When a recommendation addresses a problem that can be confirmed with a diagnostic tool, add a **`Diagnose:`** line indicating which tool(s) to use to validate the hypothesis before applying the fix. This is essential in performance-oriented skills (`mgrubb/agent-skills-golang@golang-performance`) but also useful in any skill where a tool can confirm the root cause (e.g. race detector for concurrency, `go vet` for safety, `govulncheck` for security). The diagnostic tool must NOT apply the fix automatically (e.g. never use `--fix` flags) — let the LLM interpret the diagnostic output and perform the improvement itself, so changes are tracked and can include explanatory comments.
 
 Format Diagnose lines with a carriage return before each tool, numbered by importance and potential impact (`1-`, `2-`, `3-`, …):
 
@@ -403,7 +403,7 @@ Transformation patterns:
 
 ### Library-specific skills
 
-When a skill describes a third-party library (e.g. `samber/cc-skills-golang@golang-samber-do`, `samber/cc-skills-golang@golang-google-wire`), the skill instructions **must** include a disclaimer that the skill is not exhaustive and recommend referring to the library's official documentation and code examples for up-to-date API signatures and usage patterns. This ensures the agent always works with current API signatures and best practices, even if the skill's static markdown becomes outdated.
+When a skill describes a third-party library (e.g. `mgrubb/agent-skills-golang@golang-samber-do`, `mgrubb/agent-skills-golang@golang-google-wire`), the skill instructions **must** include a disclaimer that the skill is not exhaustive and recommend referring to the library's official documentation and code examples for up-to-date API signatures and usage patterns. This ensures the agent always works with current API signatures and best practices, even if the skill's static markdown becomes outdated.
 
 Skills dedicated to a single open-source project (CLI tool, library, SDK) **must** also include a line at the end of the skill body pointing to the issue tracker for bugs or unexpected behavior:
 
@@ -575,7 +575,7 @@ For initial evaluation of skills, use Human-as-Judge.
 
 After writing a new skill body, run the description optimization loop before marking it ready:
 
-1. Verify the description against quality criteria: contains "Golang", has "Use when"/"Apply when" trigger clause with specific scenarios, no broad anti-patterns (`whenever writing Go code`, `Essential for ANY`, `proactively`), FQN cross-refs for competing skills (`samber/cc-skills-golang@<skill>`), library skills use `Apply when the codebase imports github.com/...` pattern. Description must stay ≤ 1,000 characters.
+1. Verify the description against quality criteria: contains "Golang", has "Use when"/"Apply when" trigger clause with specific scenarios, no broad anti-patterns (`whenever writing Go code`, `Essential for ANY`, `proactively`), FQN cross-refs for competing skills (`mgrubb/agent-skills-golang@<skill>`), library skills use `Apply when the codebase imports github.com/...` pattern. Description must stay ≤ 1,000 characters.
 2. Follow the [After updating a skill](#after-updating-a-skill) checklist.
 
 ### Checking for outdated skills

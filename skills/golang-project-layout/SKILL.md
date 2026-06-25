@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.0"
   openclaw:
     emoji: "📁"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -25,11 +26,11 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 
 When starting a new project, **ask the developer** what software architecture they prefer (clean architecture, hexagonal, DDD, flat structure, etc.). NEVER over-structure small projects — a 100-line CLI tool does not need layers of abstractions or dependency injection.
 
-→ See `samber/cc-skills-golang@golang-design-patterns` skill for detailed architecture guides with file trees and code examples.
+→ See `mgrubb/agent-skills-golang@golang-design-patterns` skill for detailed architecture guides with file trees and code examples.
 
 ## Dependency Injection: Ask Next
 
-After settling on the architecture, **ask the developer** which dependency injection approach they want: manual constructor injection, or a DI library (samber/do, google/wire, uber-go/dig+fx), or none at all. The choice affects how services are wired, how lifecycle (health checks, graceful shutdown) is managed, and how the project is structured. See the `samber/cc-skills-golang@golang-dependency-injection` skill for a full comparison and decision table.
+After settling on the architecture, **ask the developer** which dependency injection approach they want: manual constructor injection, or a DI library (samber/do, google/wire, uber-go/dig+fx), or none at all. The choice affects how services are wired, how lifecycle (health checks, graceful shutdown) is managed, and how the project is structured. See the `mgrubb/agent-skills-golang@golang-dependency-injection` skill for a full comparison and decision table.
 
 ## 12-Factor App
 
@@ -71,7 +72,7 @@ module utils
 
 ### Package Naming
 
-Packages MUST be lowercase, singular, and match their directory name. → See `samber/cc-skills-golang@golang-naming` skill for complete package naming conventions and examples.
+Packages MUST be lowercase, singular, and match their directory name. → See `mgrubb/agent-skills-golang@golang-naming` skill for complete package naming conventions and examples.
 
 ## Directory Layout
 
@@ -85,7 +86,7 @@ Every Go project should include at the root:
 
 - **Makefile** — build automation. See [Makefile template](assets/Makefile)
 - **.gitignore** — git ignore patterns. See [.gitignore template](assets/.gitignore)
-- **.golangci.yml** — linter config. See the `samber/cc-skills-golang@golang-lint` skill for the recommended configuration
+- **.golangci.yml** — linter config. See the `mgrubb/agent-skills-golang@golang-lint` skill for the recommended configuration
 
 For application configuration with Cobra + Viper, see [config reference](references/config.md).
 
@@ -102,7 +103,7 @@ Use `go.work` when developing multiple related modules in a monorepo. See [works
 When starting a new Go project:
 
 - [ ] **Ask the developer** their preferred software architecture (clean, hexagonal, DDD, flat, etc.)
-- [ ] **Ask the developer** their preferred DI approach — see `samber/cc-skills-golang@golang-dependency-injection` skill
+- [ ] **Ask the developer** their preferred DI approach — see `mgrubb/agent-skills-golang@golang-dependency-injection` skill
 - [ ] Decide project type (CLI, library, service, monorepo)
 - [ ] Right-size the structure to the project scope
 - [ ] Choose module name (matches repo URL, lowercase, hyphens)
@@ -117,4 +118,4 @@ When starting a new Go project:
 
 ## Related Skills
 
-→ See `samber/cc-skills-golang@golang-cli` skill for CLI tool structure and Cobra/Viper patterns. → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI approach comparison and wiring. → See `samber/cc-skills-golang@golang-lint` skill for golangci-lint configuration. → See `samber/cc-skills-golang@golang-continuous-integration` skill for CI/CD pipeline setup. → See `samber/cc-skills-golang@golang-design-patterns` skill for architectural patterns.
+→ See `mgrubb/agent-skills-golang@golang-cli` skill for CLI tool structure and Cobra/Viper patterns. → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI approach comparison and wiring. → See `mgrubb/agent-skills-golang@golang-lint` skill for golangci-lint configuration. → See `mgrubb/agent-skills-golang@golang-continuous-integration` skill for CI/CD pipeline setup. → See `mgrubb/agent-skills-golang@golang-design-patterns` skill for architectural patterns.

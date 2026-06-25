@@ -1,15 +1,16 @@
 ---
 name: golang-uber-dig
-description: "Implements dependency injection in Golang using uber-go/dig — reflection-based container, Provide/Invoke, dig.In/dig.Out parameter and result objects, named values, value groups, optional dependencies, scopes, and Decorate. Apply when using or adopting uber-go/dig, when the codebase imports `go.uber.org/dig`, or when wiring an application graph at startup. For higher-level lifecycle and modules, see `samber/cc-skills-golang@golang-uber-fx` skill."
+description: "Implements dependency injection in Golang using uber-go/dig — reflection-based container, Provide/Invoke, dig.In/dig.Out parameter and result objects, named values, value groups, optional dependencies, scopes, and Decorate. Apply when using or adopting uber-go/dig, when the codebase imports `go.uber.org/dig`, or when wiring an application graph at startup. For higher-level lifecycle and modules, see `mgrubb/agent-skills-golang@golang-uber-fx` skill."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.1"
   openclaw:
     emoji: "⛏"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -52,7 +53,7 @@ What fx adds on top of dig:
 
 **Choose dig** when you need the wiring graph only: CLI tools, libraries exposing a container to callers, test harnesses, or embedding DI into an existing app that manages its own lifecycle.
 
-**Choose fx** for long-running services (HTTP servers, workers, daemons) — lifecycle and signal handling are non-negotiable there. See `samber/cc-skills-golang@golang-uber-fx` skill.
+**Choose fx** for long-running services (HTTP servers, workers, daemons) — lifecycle and signal handling are non-negotiable there. See `mgrubb/agent-skills-golang@golang-uber-fx` skill.
 
 ## Container
 
@@ -180,7 +181,7 @@ func main() {
 func must(err error) { if err != nil { panic(err) } }
 ```
 
-dig has **no built-in lifecycle**. If you need OnStart/OnStop hooks, signal handling, and graceful shutdown, use fx — see `samber/cc-skills-golang@golang-uber-fx` skill.
+dig has **no built-in lifecycle**. If you need OnStart/OnStop hooks, signal handling, and graceful shutdown, use fx — see `mgrubb/agent-skills-golang@golang-uber-fx` skill.
 
 For Decorate, Scopes, optional deps, error helpers, and Visualize, see [advanced.md](./references/advanced.md).
 
@@ -215,11 +216,11 @@ dig containers are cheap — build a fresh one per test, override providers with
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-uber-fx` skill for application lifecycle, modules, and signal-aware Run() built on top of dig
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
-- → See `samber/cc-skills-golang@golang-samber-do` skill for a generics-based alternative without reflection
-- → See `samber/cc-skills-golang@golang-google-wire` skill for compile-time DI (no runtime container)
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for interface design patterns
-- → See `samber/cc-skills-golang@golang-testing` skill for general testing patterns
+- → See `mgrubb/agent-skills-golang@golang-uber-fx` skill for application lifecycle, modules, and signal-aware Run() built on top of dig
+- → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
+- → See `mgrubb/agent-skills-golang@golang-samber-do` skill for a generics-based alternative without reflection
+- → See `mgrubb/agent-skills-golang@golang-google-wire` skill for compile-time DI (no runtime container)
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for interface design patterns
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general testing patterns
 
 If you encounter a bug or unexpected behavior in uber-go/dig, open an issue at <https://github.com/uber-go/dig/issues>.

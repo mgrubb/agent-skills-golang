@@ -62,7 +62,7 @@ jobs:
           go-version: stable
 
       - name: Install Go skills
-        run: npx skills add https://github.com/samber/cc-skills-golang -a claude-code --skill '*' -y --copy
+        run: npx skills add https://github.com/mgrubb/agent-skills-golang -a claude-code --skill '*' -y --copy
 
       - uses: anthropics/claude-code-action@v1
         with:
@@ -141,7 +141,7 @@ jobs:
           go-version: stable
 
       - name: Install Go skills
-        run: npx skills add https://github.com/samber/cc-skills-golang -a claude-code --skill '*' -y --copy
+        run: npx skills add https://github.com/mgrubb/agent-skills-golang -a claude-code --skill '*' -y --copy
 
       - uses: anthropics/claude-code-action@v1
         with:
@@ -221,7 +221,7 @@ jobs:
           go-version: stable
 
       - name: Install Go skills
-        run: npx skills add https://github.com/samber/cc-skills-golang -a claude-code --skill '*' -y --copy
+        run: npx skills add https://github.com/mgrubb/agent-skills-golang -a claude-code --skill '*' -y --copy
 
       - uses: anthropics/claude-code-action@v1
         with:
@@ -300,7 +300,7 @@ jobs:
           go-version: stable
 
       - name: Install Go skills
-        run: npx skills add https://github.com/samber/cc-skills-golang -a claude-code --skill '*' -y --copy
+        run: npx skills add https://github.com/mgrubb/agent-skills-golang -a claude-code --skill '*' -y --copy
 
       - uses: anthropics/claude-code-action@v1
         with:
@@ -470,7 +470,7 @@ Remove jobs you don't need to reduce cost. The `ci-diagnosis` and `discuss` jobs
 Install skills into your repository, then create `.github/copilot-instructions.md`:
 
 ```bash
-npx skills add https://github.com/samber/cc-skills-golang --agent github-copilot --skill '*' -y --copy
+npx skills add https://github.com/mgrubb/agent-skills-golang --agent github-copilot --skill '*' -y --copy
 ln -s .agents .copilot
 ```
 

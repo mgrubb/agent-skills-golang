@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.4"
   openclaw:
     emoji: "🗃"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -21,7 +22,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 
 # Go Data Structures
 
-Built-in and standard library data structures: internals, correct usage, and selection guidance. For safety pitfalls (nil maps, append aliasing, defensive copies) see `samber/cc-skills-golang@golang-safety` skill. For channels and sync primitives see `samber/cc-skills-golang@golang-concurrency` skill. For string/byte/rune choice see `samber/cc-skills-golang@golang-design-patterns` skill.
+Built-in and standard library data structures: internals, correct usage, and selection guidance. For safety pitfalls (nil maps, append aliasing, defensive copies) see `mgrubb/agent-skills-golang@golang-safety` skill. For channels and sync primitives see `mgrubb/agent-skills-golang@golang-concurrency` skill. For string/byte/rune choice see `mgrubb/agent-skills-golang@golang-design-patterns` skill.
 
 ## Best Practices Summary
 
@@ -36,7 +37,7 @@ Built-in and standard library data structures: internals, correct usage, and sel
 
 ## Slice Internals
 
-A slice is a 3-word header: pointer, length, capacity. Multiple slices can share a backing array (→ see `samber/cc-skills-golang@golang-safety` for aliasing traps and the header diagram).
+A slice is a 3-word header: pointer, length, capacity. Multiple slices can share a backing array (→ see `mgrubb/agent-skills-golang@golang-safety` for aliasing traps and the header diagram).
 
 ### Capacity Growth
 
@@ -59,7 +60,7 @@ s = slices.Grow(s, additionalNeeded)
 
 ### `slices` Package (Go 1.21+)
 
-Key functions: `Sort`/`SortFunc`, `BinarySearch`, `Contains`, `Compact`, `Grow`. For `Clone`, `Equal`, `DeleteFunc` → see `samber/cc-skills-golang@golang-safety` skill.
+Key functions: `Sort`/`SortFunc`, `BinarySearch`, `Contains`, `Compact`, `Grow`. For `Clone`, `Equal`, `DeleteFunc` → see `mgrubb/agent-skills-golang@golang-safety` skill.
 
 **[Slice Internals Deep Dive](./references/slice-internals.md)** — Full `slices` package reference, growth mechanics, `len` vs `cap`, header copying, backing array aliasing.
 
@@ -82,7 +83,7 @@ m := make(map[string]*User, len(users)) // avoids rehashing during population
 | `All` (1.23+)     | Iterator over all entries    |
 | `Keys`, `Values`  | Iterators over keys/values   |
 
-For `Clone`, `Equal`, sorted iteration → see `samber/cc-skills-golang@golang-safety` skill.
+For `Clone`, `Equal`, sorted iteration → see `mgrubb/agent-skills-golang@golang-safety` skill.
 
 **[Map Internals Deep Dive](./references/map-internals.md)** — How Go maps store and hash data, bucket overflow chains, why maps never shrink (and what to do about it), comparing map performance to alternatives.
 
@@ -160,12 +161,12 @@ When using third-party libraries, refer to their official documentation and code
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for struct field alignment, memory layout optimization, and cache locality
-- → See `samber/cc-skills-golang@golang-safety` skill for nil map/slice pitfalls, append aliasing, defensive copying, `slices.Clone`/`Equal`
-- → See `samber/cc-skills-golang@golang-concurrency` skill for channels, `sync.Map`, `sync.Pool`, and all sync primitives
-- → See `samber/cc-skills-golang@golang-design-patterns` skill for `string` vs `[]byte` vs `[]rune`, iterators, streaming
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for struct composition, embedding, and generics vs `any`
-- → See `samber/cc-skills-golang@golang-code-style` skill for slice/map initialization style
+- → See `mgrubb/agent-skills-golang@golang-performance` skill for struct field alignment, memory layout optimization, and cache locality
+- → See `mgrubb/agent-skills-golang@golang-safety` skill for nil map/slice pitfalls, append aliasing, defensive copying, `slices.Clone`/`Equal`
+- → See `mgrubb/agent-skills-golang@golang-concurrency` skill for channels, `sync.Map`, `sync.Pool`, and all sync primitives
+- → See `mgrubb/agent-skills-golang@golang-design-patterns` skill for `string` vs `[]byte` vs `[]rune`, iterators, streaming
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for struct composition, embedding, and generics vs `any`
+- → See `mgrubb/agent-skills-golang@golang-code-style` skill for slice/map initialization style
 
 ## Common Mistakes
 

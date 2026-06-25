@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.5"
   openclaw:
     emoji: "🌐"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -215,7 +216,7 @@ Most services do not need connection pooling — profile before adding complexit
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-context` skill for deadline and cancellation patterns
-- → See `samber/cc-skills-golang@golang-error-handling` skill for gRPC error to Go error mapping
-- → See `samber/cc-skills-golang@golang-observability` skill for gRPC interceptors (logging, tracing, metrics)
-- → See `samber/cc-skills-golang@golang-testing` skill for gRPC testing with bufconn
+- → See `mgrubb/agent-skills-golang@golang-context` skill for deadline and cancellation patterns
+- → See `mgrubb/agent-skills-golang@golang-error-handling` skill for gRPC error to Go error mapping
+- → See `mgrubb/agent-skills-golang@golang-observability` skill for gRPC interceptors (logging, tracing, metrics)
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for gRPC testing with bufconn

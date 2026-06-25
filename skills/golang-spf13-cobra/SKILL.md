@@ -1,15 +1,16 @@
 ---
 name: golang-spf13-cobra
-description: "Golang CLI command tree library using spf13/cobra — cobra.Command, RunE vs Run, PersistentPreRunE hook chain, Args validators (NoArgs, ExactArgs, MatchAll, custom), persistent vs local flags, command groups, ValidArgsFunction, RegisterFlagCompletionFunc, ShellCompDirective, usage/help template customization, man-page and markdown doc generation, and testing with SetArgs/SetOut/SetErr. Apply when using or adopting spf13/cobra, or when the codebase imports `github.com/spf13/cobra`. For configuration layering alongside cobra, see the `samber/cc-skills-golang@golang-spf13-viper` skill. For general CLI architecture (project layout, exit codes, signal handling, I/O patterns), see `samber/cc-skills-golang@golang-cli`."
+description: "Golang CLI command tree library using spf13/cobra — cobra.Command, RunE vs Run, PersistentPreRunE hook chain, Args validators (NoArgs, ExactArgs, MatchAll, custom), persistent vs local flags, command groups, ValidArgsFunction, RegisterFlagCompletionFunc, ShellCompDirective, usage/help template customization, man-page and markdown doc generation, and testing with SetArgs/SetOut/SetErr. Apply when using or adopting spf13/cobra, or when the codebase imports `github.com/spf13/cobra`. For configuration layering alongside cobra, see the `mgrubb/agent-skills-golang@golang-spf13-viper` skill. For general CLI architecture (project layout, exit codes, signal handling, I/O patterns), see `mgrubb/agent-skills-golang@golang-cli`."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.2"
   openclaw:
     emoji: "🐍"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -55,7 +56,7 @@ These libraries do fundamentally different things and can be used independently.
 
 **Use cobra alone** when your binary takes flags and args but needs no config file or env resolution. **Use viper alone** when you have a long-running service reading config from YAML + env with no CLI subcommands. Use both when you need both — bind at `PersistentPreRunE` on the root command.
 
-→ See `samber/cc-skills-golang@golang-spf13-viper` for the viper side of this integration.
+→ See `mgrubb/agent-skills-golang@golang-spf13-viper` for the viper side of this integration.
 
 ## Command tree
 
@@ -163,8 +164,8 @@ Cobra accumulates flag state across `Execute()` calls — build a fresh command 
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-cli` skill for general CLI architecture — project layout, exit codes, signal handling, I/O patterns
-- → See `samber/cc-skills-golang@golang-spf13-viper` skill for configuration layering alongside cobra (flag → env → file → default precedence)
-- → See `samber/cc-skills-golang@golang-testing` skill for general Go testing patterns
+- → See `mgrubb/agent-skills-golang@golang-cli` skill for general CLI architecture — project layout, exit codes, signal handling, I/O patterns
+- → See `mgrubb/agent-skills-golang@golang-spf13-viper` skill for configuration layering alongside cobra (flag → env → file → default precedence)
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general Go testing patterns
 
 If you encounter a bug or unexpected behavior in spf13/cobra, open an issue at <https://github.com/spf13/cobra/issues>.

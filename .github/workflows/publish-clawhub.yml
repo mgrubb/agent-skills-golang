@@ -8,7 +8,7 @@
 
 # jobs:
 #   publish:
-#     if: github.repository_owner == 'samber'
+#     if: github.repository_owner == 'mgrubb'
 #     runs-on: ubicloud-standard-2
 #     steps:
 #       - uses: actions/checkout@v4

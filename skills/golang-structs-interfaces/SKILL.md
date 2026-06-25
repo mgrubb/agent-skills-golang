@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.3"
   openclaw:
     emoji: "🧩"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -19,7 +20,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 
 **Persona:** You are a Go type system designer. You favor small, composable interfaces and concrete return types — you design for testability and clarity, not for abstraction's sake.
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-structs-interfaces` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-structs-interfaces` skill takes precedence.
 
 # Go Structs & Interfaces
 
@@ -31,7 +32,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 
 Interfaces SHOULD have 1-3 methods. Small interfaces are easier to implement, mock, and compose. If you need a larger contract, compose it from small interfaces:
 
-→ See `samber/cc-skills-golang@golang-naming` skill for interface naming conventions (method + "-er" suffix, canonical names)
+→ See `mgrubb/agent-skills-golang@golang-naming` skill for interface naming conventions (method + "-er" suffix, canonical names)
 
 ```go
 type Reader interface {
@@ -360,10 +361,10 @@ func process(pool ConnPool) { ... }
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-naming` skill for interface naming conventions (Reader, Closer, Stringer)
-- → See `samber/cc-skills-golang@golang-design-patterns` skill for functional options, constructors, and builder patterns
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI patterns using interfaces
-- → See `samber/cc-skills-golang@golang-code-style` skill for value vs pointer function parameters (distinct from receivers)
+- → See `mgrubb/agent-skills-golang@golang-naming` skill for interface naming conventions (Reader, Closer, Stringer)
+- → See `mgrubb/agent-skills-golang@golang-design-patterns` skill for functional options, constructors, and builder patterns
+- → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI patterns using interfaces
+- → See `mgrubb/agent-skills-golang@golang-code-style` skill for value vs pointer function parameters (distinct from receivers)
 
 ## Common Mistakes
 

@@ -1,15 +1,16 @@
 ---
 name: golang-samber-lo
-description: "Functional programming helpers for Golang using samber/lo — 500+ type-safe generic functions for slices, maps, channels, strings, math, tuples, and concurrency (Map, Filter, Reduce, GroupBy, Chunk, Flatten, Find, Uniq, etc.). Core immutable package (lo), concurrent variants (lo/parallel aka lop), in-place mutations (lo/mutable aka lom), lazy iterators (lo/it aka loi for Go 1.23+), and experimental SIMD (lo/exp/simd). Apply when using or adopting samber/lo, when the codebase imports github.com/samber/lo, or when implementing functional-style data transformations in Go. Not for streaming pipelines (→ See `samber/cc-skills-golang@golang-samber-ro` skill)."
+description: "Functional programming helpers for Golang using samber/lo — 500+ type-safe generic functions for slices, maps, channels, strings, math, tuples, and concurrency (Map, Filter, Reduce, GroupBy, Chunk, Flatten, Find, Uniq, etc.). Core immutable package (lo), concurrent variants (lo/parallel aka lop), in-place mutations (lo/mutable aka lom), lazy iterators (lo/it aka loi for Go 1.23+), and experimental SIMD (lo/exp/simd). Apply when using or adopting samber/lo, when the codebase imports github.com/samber/lo, or when implementing functional-style data transformations in Go. Not for streaming pipelines (→ See `mgrubb/agent-skills-golang@golang-samber-ro` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.1"
   openclaw:
     emoji: "🧰"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -74,7 +75,7 @@ Start with `lo`. Move to other packages only when profiling shows a bottleneck o
 - `lop` is for CPU parallelism, not I/O concurrency — for I/O fan-out, use `errgroup` instead
 - `lom` breaks immutability — only use when allocation pressure is measured, never assumed
 - `loi` eliminates intermediate allocations in chains like `Map → Filter → Take` by evaluating lazily
-- For reactive/streaming pipelines over infinite event streams, → see `samber/cc-skills-golang@golang-samber-ro` skill + `samber/ro` package
+- For reactive/streaming pipelines over infinite event streams, → see `mgrubb/agent-skills-golang@golang-samber-ro` skill + `samber/ro` package
 
 For detailed package comparison and decision flowchart, see [Package Guide](./references/package-guide.md).
 
@@ -177,7 +178,7 @@ If you encounter a bug or unexpected behavior in samber/lo, open an issue at [gi
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-samber-ro` skill for reactive/streaming pipelines over infinite event streams (`samber/ro` package)
-- → See `samber/cc-skills-golang@golang-samber-mo` skill for monadic types (Option, Result, Either) that compose with lo transforms
-- → See `samber/cc-skills-golang@golang-data-structures` skill for choosing the right underlying data structure
-- → See `samber/cc-skills-golang@golang-performance` skill for profiling methodology before switching to `lom`/`lop`
+- → See `mgrubb/agent-skills-golang@golang-samber-ro` skill for reactive/streaming pipelines over infinite event streams (`samber/ro` package)
+- → See `mgrubb/agent-skills-golang@golang-samber-mo` skill for monadic types (Option, Result, Either) that compose with lo transforms
+- → See `mgrubb/agent-skills-golang@golang-data-structures` skill for choosing the right underlying data structure
+- → See `mgrubb/agent-skills-golang@golang-performance` skill for profiling methodology before switching to `lom`/`lop`

@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.0.5"
   openclaw:
     emoji: "🎭"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -268,8 +269,8 @@ If you encounter a bug or unexpected behavior in samber/mo, open an issue at <ht
 
 ## Cross-References
 
-- -> See `samber/cc-skills-golang@golang-samber-lo` skill for functional collection transforms (Map, Filter, Reduce on slices) that compose with mo types
-- -> See `samber/cc-skills-golang@golang-error-handling` skill for idiomatic Go error handling patterns
-- -> See `samber/cc-skills-golang@golang-safety` skill for nil-safety and defensive Go coding
-- -> See `samber/cc-skills-golang@golang-database` skill for database access patterns
-- -> See `samber/cc-skills-golang@golang-design-patterns` skill for functional options and other Go patterns
+- -> See `mgrubb/agent-skills-golang@golang-samber-lo` skill for functional collection transforms (Map, Filter, Reduce on slices) that compose with mo types
+- -> See `mgrubb/agent-skills-golang@golang-error-handling` skill for idiomatic Go error handling patterns
+- -> See `mgrubb/agent-skills-golang@golang-safety` skill for nil-safety and defensive Go coding
+- -> See `mgrubb/agent-skills-golang@golang-database` skill for database access patterns
+- -> See `mgrubb/agent-skills-golang@golang-design-patterns` skill for functional options and other Go patterns

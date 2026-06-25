@@ -2,10 +2,12 @@
 
 AI agent skills are reusable instruction sets that extend your coding assistant with domain-specific expertise, loaded on demand so they don't bloat your context. This repository covers **Go-specific** skills only (language, testing, security, observability, etc.); for dev workflow skills (git conventions, CI/CD, PR reviews) you'll want to add a separate skills plugin.
 
+This fork is independently maintained by [Michael Grubb](https://github.com/mgrubb) and may intentionally diverge from the upstream project.
+
 For generic skills, please visit [cc-skills](https://github.com/samber/cc-skills).
 
 > [!IMPORTANT]
-> Bootstrapped with Claude Code by distilling my Go project commits. **Edited, tested, reviewed and reworked by a human**.
+> The upstream project was bootstrapped with Claude Code by distilling Go project commits. **Edited, tested, reviewed and reworked by a human**.
 >
 > **No AI slop here.** AI-made skills are useless.
 
@@ -16,9 +18,9 @@ For generic skills, please visit [cc-skills](https://github.com/samber/cc-skills
 **Install with [skills](https://skills.sh/) CLI** (universal, works with any [Agent Skills](https://agentskills.io)-compatible tool):
 
 ```bash
-npx skills add https://github.com/samber/cc-skills-golang --all
+npx skills add https://github.com/mgrubb/agent-skills-golang --all
 # or a single skill:
-npx skills add https://github.com/samber/cc-skills-golang --skill golang-performance
+npx skills add https://github.com/mgrubb/agent-skills-golang --skill golang-performance
 ```
 
 <!-- prettier-ignore-start -->
@@ -27,8 +29,7 @@ npx skills add https://github.com/samber/cc-skills-golang --skill golang-perform
 <summary>Claude Code</summary>
 
 ```bash
-/plugin marketplace add samber/cc
-/plugin install cc-skills-golang@samber
+/plugin install https://github.com/mgrubb/agent-skills-golang
 ```
 
 </details>
@@ -39,9 +40,9 @@ npx skills add https://github.com/samber/cc-skills-golang --skill golang-perform
 Copy skills into the cross-client discovery directory:
 
 ```bash
-git clone https://github.com/samber/cc-skills-golang.git ~/.openclaw/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.openclaw/skills/agent-skills-golang
 # or in workspace:
-git clone https://github.com/samber/cc-skills-golang.git ~/.openclaw/workspace/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.openclaw/workspace/skills/agent-skills-golang
 ```
 
 </details>
@@ -50,10 +51,10 @@ git clone https://github.com/samber/cc-skills-golang.git ~/.openclaw/workspace/s
 <summary>Gemini CLI</summary>
 
 ```bash
-gemini extensions install https://github.com/samber/cc-skills-golang
+gemini extensions install https://github.com/mgrubb/agent-skills-golang
 ```
 
-Update with `gemini extensions update cc-skills-golang`.
+Update with `gemini extensions update agent-skills-golang`.
 
 </details>
 
@@ -63,7 +64,7 @@ Update with `gemini extensions update cc-skills-golang`.
 Copy skills into the cross-client discovery directory:
 
 ```bash
-git clone https://github.com/samber/cc-skills-golang.git  ~/.cursor/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git  ~/.cursor/skills/agent-skills-golang
 ```
 
 Cursor auto-discovers skills from `.agents/skills/` and `.cursor/skills/`.
@@ -76,9 +77,9 @@ Cursor auto-discovers skills from `.agents/skills/` and `.cursor/skills/`.
 Copy skills into the cross-client discovery directory:
 
 ```bash
-/plugin install https://github.com/samber/cc-skills-golang
+/plugin install https://github.com/mgrubb/agent-skills-golang
 # or
-git clone https://github.com/samber/cc-skills-golang.git ~/.copilot/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.copilot/skills/agent-skills-golang
 ```
 
 Copilot auto-discovers skills from `.copilot/skills/`.
@@ -91,7 +92,7 @@ Copilot auto-discovers skills from `.copilot/skills/`.
 Copy skills into the cross-client discovery directory:
 
 ```bash
-git clone https://github.com/samber/cc-skills-golang.git ~/.agents/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.agents/skills/agent-skills-golang
 ```
 
 OpenCode auto-discovers skills from `.agents/skills/`, `.opencode/skills/`, and `.claude/skills/`.
@@ -104,10 +105,10 @@ OpenCode auto-discovers skills from `.agents/skills/`, `.opencode/skills/`, and 
 Clone into the cross-client discovery path:
 
 ```bash
-git clone https://github.com/samber/cc-skills-golang.git ~/.agents/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.agents/skills/agent-skills-golang
 ```
 
-Codex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`. Update with `cd ~/.agents/skills/cc-skills-golang && git pull`.
+Codex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`. Update with `cd ~/.agents/skills/agent-skills-golang && git pull`.
 
 </details>
 
@@ -117,10 +118,10 @@ Codex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`. Upda
 Clone and symlink into the cross-client discovery path:
 
 ```bash
-git clone https://github.com/samber/cc-skills-golang.git ~/.antigravity/skills/cc-skills-golang
+git clone https://github.com/mgrubb/agent-skills-golang.git ~/.antigravity/skills/agent-skills-golang
 ```
 
-Update with `cd ~/.antigravity/skills/cc-skills-golang && git pull`.
+Update with `cd ~/.antigravity/skills/agent-skills-golang && git pull`.
 
 </details>
 
@@ -442,7 +443,7 @@ See [GOLANG-AI-DRIVEN-REVIEW.md](./GOLANG-AI-DRIVEN-REVIEW.md) for full setup in
 
 ## 🎯 Tuning Skill Triggers
 
-If a skill triggers too often or not often enough, please [open an issue](https://github.com/samber/cc-skills-golang/issues) suggesting a description change. The `description` field in SKILL.md frontmatter is the primary triggering mechanism — small wording adjustments can significantly improve trigger accuracy. Some `SKILL.md` files might have a `When to use` section which is another level of exclusion. Finally, `SKILL.md` files are an entrypoint for lazy loading references with deep knowledge located in `references/`.
+If a skill triggers too often or not often enough, please [open an issue](https://github.com/mgrubb/agent-skills-golang/issues) suggesting a description change. The `description` field in SKILL.md frontmatter is the primary triggering mechanism — small wording adjustments can significantly improve trigger accuracy. Some `SKILL.md` files might have a `When to use` section which is another level of exclusion. Finally, `SKILL.md` files are an entrypoint for lazy loading references with deep knowledge located in `references/`.
 
 ## 🔄 Overlap
 
@@ -450,7 +451,7 @@ Claude reports very little overlap between skills in this repo, thanks to cross-
 
 - I estimate that 50% of `golang-naming` and `golang-code-style` overlap with linters (golangci-lint).
 - A large part of the security rules in `golang-security` have been distilled from the Bearer (SAST) checklist. The skill is still useful for methodology.
-- If your team has its own conventions, create a company skill and declare the override explicitly near the top of its body: `This skill supersedes samber/cc-skills-golang@golang-naming skill for [company] projects.` Skills marked ⚙️ in the table above support this mechanism.
+- If your team has its own conventions, create a company skill and declare the override explicitly near the top of its body: `This skill supersedes mgrubb/agent-skills-golang@golang-naming skill for [company] projects.` Skills marked ⚙️ in the table above support this mechanism.
 
 ## ✍️ Contribute
 
@@ -463,15 +464,15 @@ Claude reports very little overlap between skills in this repo, thanks to cross-
 
 For more guidelines, please check `CLAUDE.md`.
 
-## 💫 Fuel the Revolution
+## Attribution
 
-- ⭐️ **Star this repo** - Your star powers the caffeine engine!
-- ☕️ **Buy me a coffee** - I'll literally use it to build more skills while drinking actual coffee
+This repository was originally forked from [samber/cc-skills-golang](https://github.com/samber/cc-skills-golang), which is licensed under the MIT License. This fork is independently maintained and may intentionally diverge from the upstream project. Original copyright notices are preserved in accordance with the MIT License.
 
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/samber?style=for-the-badge)](https://github.com/sponsors/samber)
+Upstream repository for comparison or sync purposes: <https://github.com/samber/cc-skills-golang>.
 
 ## 📝 License
 
 Copyright © 2026 [Samuel Berthe](https://github.com/samber).
+Copyright © 2026 [Michael Grubb](https://github.com/mgrubb).
 
 This project is under [MIT](./LICENSE) license.

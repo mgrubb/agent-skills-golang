@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.5"
   openclaw:
     emoji: "📝"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -24,7 +25,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 - **Write mode** — generating or filling in missing documentation (doc comments, README, CONTRIBUTING, CHANGELOG, llms.txt). Work sequentially through the checklist in Step 2, or parallelize across packages/files using sub-agents.
 - **Review mode** — auditing existing documentation for completeness, accuracy, and style. Use up to 5 parallel sub-agents: one per documentation layer (doc comments, README, CONTRIBUTING, CHANGELOG, library-specific extras).
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-documentation` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-documentation` skill takes precedence.
 
 # Go Documentation
 
@@ -32,7 +33,7 @@ Write documentation that serves both humans and AI agents. Good documentation ma
 
 ## Cross-References
 
-See `samber/cc-skills-golang@golang-naming` skill for naming conventions in doc comments. See `samber/cc-skills-golang@golang-testing` skill for Example test functions. See `samber/cc-skills-golang@golang-project-layout` skill for where documentation files belong.
+See `mgrubb/agent-skills-golang@golang-naming` skill for naming conventions in doc comments. See `mgrubb/agent-skills-golang@golang-testing` skill for Example test functions. See `mgrubb/agent-skills-golang@golang-project-layout` skill for where documentation files belong.
 
 ## Writing Principles
 

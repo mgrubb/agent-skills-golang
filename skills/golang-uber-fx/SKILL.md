@@ -1,15 +1,16 @@
 ---
 name: golang-uber-fx
-description: "Golang application framework using uber-go/fx — fx.New, fx.Provide, fx.Invoke, fx.Module, fx.Lifecycle hooks, fx.Annotate (name/group/As), fx.Decorate, fx.Supply, fx.Replace, fx.WithLogger, and signal-aware Run(). Apply when using or adopting uber-go/fx, when the codebase imports `go.uber.org/fx`, or when wiring services with fx.New. For raw DI without lifecycle, see `samber/cc-skills-golang@golang-uber-dig` skill."
+description: "Golang application framework using uber-go/fx — fx.New, fx.Provide, fx.Invoke, fx.Module, fx.Lifecycle hooks, fx.Annotate (name/group/As), fx.Decorate, fx.Supply, fx.Replace, fx.WithLogger, and signal-aware Run(). Apply when using or adopting uber-go/fx, when the codebase imports `go.uber.org/fx`, or when wiring services with fx.New. For raw DI without lifecycle, see `mgrubb/agent-skills-golang@golang-uber-dig` skill."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.1"
   openclaw:
     emoji: "🏭"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -53,7 +54,7 @@ What fx adds on top:
 
 **Choose fx** for long-running services (HTTP servers, workers, daemons) — lifecycle and signal handling are mandatory there, and modules make large service graphs manageable.
 
-**Choose raw dig** when you need wiring without a framework: CLI tools, libraries that expose a container to callers, test harnesses, or embedding DI into an existing app that manages its own lifecycle. See `samber/cc-skills-golang@golang-uber-dig` skill.
+**Choose raw dig** when you need wiring without a framework: CLI tools, libraries that expose a container to callers, test harnesses, or embedding DI into an existing app that manages its own lifecycle. See `mgrubb/agent-skills-golang@golang-uber-dig` skill.
 
 ## The Application
 
@@ -220,12 +221,12 @@ Use `go.uber.org/fx/fxtest` to integrate fx with `*testing.T` (failures call `t.
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-uber-dig` skill for the underlying container, `dig.In`/`dig.Out`, and DI without lifecycle
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
-- → See `samber/cc-skills-golang@golang-samber-do` skill for a generics-based alternative without reflection
-- → See `samber/cc-skills-golang@golang-google-wire` skill for compile-time DI (no runtime container)
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for interface design patterns
-- → See `samber/cc-skills-golang@golang-context` skill for context propagation in OnStart/OnStop hooks
-- → See `samber/cc-skills-golang@golang-testing` skill for general testing patterns
+- → See `mgrubb/agent-skills-golang@golang-uber-dig` skill for the underlying container, `dig.In`/`dig.Out`, and DI without lifecycle
+- → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI concepts and library comparison
+- → See `mgrubb/agent-skills-golang@golang-samber-do` skill for a generics-based alternative without reflection
+- → See `mgrubb/agent-skills-golang@golang-google-wire` skill for compile-time DI (no runtime container)
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for interface design patterns
+- → See `mgrubb/agent-skills-golang@golang-context` skill for context propagation in OnStart/OnStop hooks
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general testing patterns
 
 If you encounter a bug or unexpected behavior in uber-go/fx, open an issue at <https://github.com/uber-go/fx/issues>.

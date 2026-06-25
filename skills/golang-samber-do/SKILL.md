@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.2.2"
   openclaw:
     emoji: "💉"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -217,6 +218,6 @@ For testing patterns (cloning, overrides, mocks), see [Testing](./references/tes
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI concepts, comparison, and when to adopt a DI library
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for interface design patterns
-- → See `samber/cc-skills-golang@golang-testing` skill for general testing patterns
+- → See `mgrubb/agent-skills-golang@golang-dependency-injection` skill for DI concepts, comparison, and when to adopt a DI library
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for interface design patterns
+- → See `mgrubb/agent-skills-golang@golang-testing` skill for general testing patterns

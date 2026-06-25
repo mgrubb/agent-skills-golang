@@ -5,11 +5,12 @@ user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents, and for projects using Golang.
 metadata:
-  author: samber
+  author: mgrubb
+  originalAuthor: samber
   version: "1.1.1"
   openclaw:
     emoji: "🏷"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/mgrubb/agent-skills-golang
     requires:
       bins:
         - go
@@ -17,7 +18,7 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(git:*) Agent
 ---
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-naming` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `mgrubb/agent-skills-golang@golang-naming` skill takes precedence.
 
 # Go Naming Conventions
 
@@ -154,10 +155,10 @@ For complete rules, examples, and rationale, see:
 
 ## Enforce with Linters
 
-Many naming convention issues are caught automatically by linters: `revive`, `predeclared`, `misspell`, `errname`. See `samber/cc-skills-golang@golang-lint` skill for configuration and usage.
+Many naming convention issues are caught automatically by linters: `revive`, `predeclared`, `misspell`, `errname`. See `mgrubb/agent-skills-golang@golang-lint` skill for configuration and usage.
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-code-style` skill for broader formatting and style decisions
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for interface naming depth and receiver design
-- → See `samber/cc-skills-golang@golang-lint` skill for automated enforcement (revive, predeclared, misspell, errname)
+- → See `mgrubb/agent-skills-golang@golang-code-style` skill for broader formatting and style decisions
+- → See `mgrubb/agent-skills-golang@golang-structs-interfaces` skill for interface naming depth and receiver design
+- → See `mgrubb/agent-skills-golang@golang-lint` skill for automated enforcement (revive, predeclared, misspell, errname)
